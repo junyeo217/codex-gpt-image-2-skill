@@ -1,0 +1,6 @@
+interface:
+  display_name: "GPT Image 2"
+  short_description: "Structured GPT Image 2 prompts, edits, API, and Codex image-generation workflows."
+  default_prompt: "Use $gpt-image-2 to turn my image idea into a production-ready prompt and generation plan."
+policy:
+  allow_implicit_invocation: true
