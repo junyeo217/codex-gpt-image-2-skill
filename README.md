@@ -2,9 +2,9 @@
 
 [한국어 문서](README.ko.md) | English
 
-A Codex skill for GPT Image 2 prompt design, reverse prompting, image editing workflows, API usage notes, and Codex `image_generation` integration.
+A Codex skill for GPT Image 2 prompt design, reverse prompting, image editing guidance, and production-ready visual brief construction.
 
-This repository is a **Codex skill**, not an image model and not a standalone image-generation service. It gives Codex a compact production workflow for turning vague visual ideas, reference images, or implementation requests into structured GPT Image 2 prompts and practical generation plans.
+This repository is a **Codex skill**, not an image model, not an API wrapper, and not a standalone image-generation service. It gives Codex a compact production workflow for turning vague visual ideas or reference images into structured GPT Image 2 prompts and practical creative direction.
 
 ## What This Skill Is For
 
@@ -12,11 +12,10 @@ Use this skill when you want Codex to help with:
 
 - Production-ready GPT Image 2 prompts
 - Reverse prompting from a reference image into a reusable prompt
-- Image editing prompts that separate preserved details from requested changes
+- Image editing instructions that separate preserved details from requested changes
 - Cinematic posters, portraits, product shots, ads, thumbnails, UI mockups, infographics, and character concepts
-- API implementation notes for `gpt-image-2`
-- Codex / Responses API `image_generation` workflow planning
 - Prompt QA, failure diagnosis, and targeted iteration
+- Visual brief cleanup before generating images in Codex, ChatGPT, or another GPT Image 2 workflow
 
 ## Core Idea
 
@@ -76,10 +75,10 @@ Design a product-detail-page visual:
 Use $gpt-image-2 to create a full cosmetic product detail page image prompt, not just a hero image.
 ```
 
-Plan an API workflow:
+Diagnose a weak prompt:
 
 ```text
-Use $gpt-image-2 to draft a Python API workflow for generating and validating product ad images.
+Use $gpt-image-2 to improve this prompt and explain which visual slots are missing.
 ```
 
 ## Reverse Prompting Workflow
@@ -115,14 +114,14 @@ For image edits, the skill separates:
 
 This helps Codex produce edit instructions that are less ambiguous and easier to verify.
 
-## API And Codex Routes
+## Advanced Implementation Notes
 
-The skill includes notes for two common implementation routes:
+This skill is primarily for prompt and visual-direction work. It also includes a small reference file for advanced users who want to connect the prompt workflow to implementation routes such as:
 
 - Direct Image API calls with `model="gpt-image-2"`
 - Responses API / Codex workflows using the `image_generation` tool
 
-See [references/api-and-codex-routes.md](references/api-and-codex-routes.md) for examples and reliability notes.
+These notes are supplementary, not the main purpose of the skill. See [references/api-and-codex-routes.md](references/api-and-codex-routes.md) if you need them.
 
 ## Helper Script
 
@@ -161,7 +160,7 @@ python scripts/compose_prompt.py check-size --size 1536x1024
 ## Notes And Limitations
 
 - This skill does not prove which backend image model a Codex UI tool uses unless the runtime exposes that information.
-- For deterministic API work, explicitly set `model="gpt-image-2"`.
+- For deterministic API work, explicitly set `model="gpt-image-2"`; API notes are provided only as supplementary reference.
 - Reverse prompting creates a useful reproduction prompt, not the exact original prompt.
 - The repository does not include the original PDF, Notion page text, or copied prompt collections.
 - Always follow OpenAI usage policies and applicable rights when using real people, brands, logos, or copyrighted references.
