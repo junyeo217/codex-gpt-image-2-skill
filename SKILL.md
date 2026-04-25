@@ -1,17 +1,18 @@
 ---
 name: gpt-image-2
-description: Use when the user wants GPT Image 2 / GPT-Image-2.0 image generation, image editing, prompt design, reference-image workflows, Codex image_generation tooling, or production-ready visual prompts for posters, thumbnails, product shots, characters, book covers, ads, UI mockups, and cinematic images.
+description: Use when the user wants GPT Image 2 / GPT-Image-2.0 prompt design, reverse prompting, image editing guidance, reference-image workflows, or production-ready visual prompts for posters, thumbnails, product shots, characters, book covers, ads, UI mockups, and cinematic images.
 ---
 
 # GPT Image 2
 
-Create or refine image prompts and image-generation workflows for `gpt-image-2`.
+Create or refine image prompts and visual-direction workflows for `gpt-image-2`.
 
 ## First choice
 
 - If the user asks to create or edit a bitmap image inside Codex, use the available image generation/editing tool directly.
-- If the user asks for a reusable prompt, brief, workflow, API script, CLI wrapper, plugin, or project integration, produce or edit files using the patterns below.
-- Do not claim the exact backend model used by a Codex UI/tool unless the runtime exposes it. For API work, explicitly set `model: "gpt-image-2"`.
+- If the user asks for a reusable prompt, visual brief, reverse prompt, edit instruction, or generation plan, produce it using the patterns below.
+- Do not present this skill as an API wrapper. API notes are supplementary references for users who explicitly ask for implementation details.
+- Do not claim the exact backend model used by a Codex UI/tool unless the runtime exposes it. For deterministic API work, explicitly set `model: "gpt-image-2"`.
 
 ## Prompt contract
 
@@ -44,7 +45,9 @@ Keep slots short, concrete, and non-overlapping. The PDF experiments show qualit
 7. Choose output settings deliberately: size/aspect, quality, format, background, and whether transparent output is required.
 8. After generation, inspect the result against the prompt slots and iterate by correcting the missing slot, not by adding generic style words.
 
-## API notes
+## API notes are secondary
+
+This skill is primarily for prompts, reverse prompting, image-editing instructions, and visual direction. Only use API details when the user explicitly asks for implementation help.
 
 - Official model: `gpt-image-2`; snapshot observed in docs: `gpt-image-2-2026-04-21`.
 - Supported image endpoints: `/v1/images/generations` and `/v1/images/edits`.
@@ -56,7 +59,7 @@ Keep slots short, concrete, and non-overlapping. The PDF experiments show qualit
 Read as needed:
 
 - `references/prompt-frameworks.md` for detailed prompt patterns.
-- `references/api-and-codex-routes.md` for API, Codex CLI, OAuth-wrapper, and plugin implementation notes.
+- `references/api-and-codex-routes.md` only when the user explicitly asks about API, Codex CLI, OAuth-wrapper, or plugin implementation notes.
 - `references/source-notes.md` for distilled notes from the PDF, Notion page, GitHub repos, and official docs.
 
 ## Helper script
