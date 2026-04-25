@@ -26,11 +26,11 @@ For edits/reference workflows, use the image edits endpoint with `model="gpt-ima
 
 ## Responses API image-generation tool
 
-Use this when a Codex/agent workflow needs an image tool call through a reasoning model:
+Use this when a Codex/agent workflow needs an image tool call through a reasoning model. Pick a current Responses model that supports the `image_generation` tool; the example below uses `gpt-5.5` because it appears in the current official guide.
 
 ```json
 {
-  "model": "gpt-5.4",
+  "model": "gpt-5.5",
   "input": "Create a cinematic product poster...",
   "tools": [
     {
