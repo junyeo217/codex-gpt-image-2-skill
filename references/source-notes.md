@@ -1,6 +1,6 @@
 # Source Notes
 
-These are distilled implementation notes from the user-provided PDF and links. They are not a full copy of the sources.
+These are distilled notes from official documentation, user-provided prompt experiments, and public community workflows. They are not a full copy of the sources.
 
 ## Official docs checked on 2026-04-26
 
@@ -39,27 +39,16 @@ Template families observed:
 - Novel/book cover
 - Ad banner
 
-## GitHub implementation repos
+## Community workflow notes
 
-`ktkarchive/codex-imagegen-2-skill-for-kimi`:
+Several public GPT Image 2 and Codex image-generation community workflows were reviewed for general patterns. No source code, full prompt collections, or original assets from those projects are included in this skill.
 
-- Useful patterns: prompt enhancement, generation/edit scripts, PNG validation, optional prompt-image alignment scoring, history logging.
-- Be careful with claims about free billing or exact backend identity unless the local runtime proves it.
+Useful generalized patterns:
 
-`jkf87/openclaw-codex-image-gen`:
-
-- Useful patterns: direct `codex responses` payload, `image_generation` tool choice, JSONL event extraction, output path JSON, logs, aspect mapping, retry handling.
-- Avoid copying machine-specific binary paths into reusable skills.
-
-`techkwon/hermes-codex-image-skill`:
-
-- Useful patterns: stable output copy, JSON contract, login checks, explicit caveat that local Codex behavior does not prove exact backend model identity.
-
-`Jinbro98/hermes-gpt-image-gen`:
-
-- Useful patterns: tool registration, explicit output path returns, feature checks, new/changed output-file detection, debug artifacts, temp cleanup.
-
-`EvoLinkAI/awesome-gpt-image-2-prompts`:
-
-- Useful prompt families: portraits, posters/illustrations, character design, UI/mockups, comparison/edit cases, high-density infographics.
-- Reuse patterns, not copyrighted prompt collections wholesale.
+- Keep prompt construction structured instead of relying on generic style adjectives.
+- Preserve identity, layout, and requested edits as separate instruction groups.
+- Validate generated files before using them downstream.
+- Return stable output paths and simple machine-readable results when building automation wrappers.
+- Keep debug logs for failed generations or extraction failures.
+- Avoid machine-specific binary paths, local account assumptions, or claims about exact backend model identity unless the runtime proves them.
+- Reuse community prompt patterns as design inspiration, not as copied prompt collections.
