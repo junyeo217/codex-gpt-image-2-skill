@@ -24,6 +24,8 @@ with open("output.png", "wb") as f:
 
 For edits/reference workflows, use the image edits endpoint with `model="gpt-image-2"` and one or more input images. Keep the prompt explicit about preserved details versus transformed details.
 
+Do not rely on `input_fidelity` for `gpt-image-2`. The official model summary says this parameter is disabled for `gpt-image-2` because image inputs are already high fidelity by default.
+
 ## Responses API image-generation tool
 
 Use this when a Codex/agent workflow needs an image tool call through a reasoning model. Pick a current Responses model that supports the `image_generation` tool; the example below uses `gpt-5.5` because it appears in the current official guide.
@@ -65,6 +67,8 @@ Use this route only when the user specifically wants to use an existing local Co
 - Review: `quality: "medium"` with final aspect ratio.
 - Final: `quality: "high"` and exact deliverable dimensions.
 - Use `jpeg` or `webp` when latency/file size matters; use `png` for lossless review and assets with text.
+- Prefer `1024x1024`, `1024x1536`, `1536x1024`, or `2560x1440` for reliable production review. Treat anything above `2560x1440` as experimental.
+- Keep custom `gpt-image-2` sizes below a 3840px max edge, with both dimensions divisible by 16. If a requested UHD target uses `3840x2160`, round down to a valid size such as `3824x2144`.
 
 ## Verification
 
