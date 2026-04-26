@@ -60,6 +60,17 @@ Text needs explicit rules:
 - For text on objects, add surface integration: text conforms to curvature/perspective and is not floating.
 - Add `no extra text`, `no watermark`, and `no gibberish characters` when the text is important.
 
+## Official Cookbook tuning rules
+
+- Put prompts in a stable order and state the intended use: ad, UI mockup, infographic, catalog product shot, poster, or edit.
+- Use labeled sections or short lines for complex production prompts instead of one overloaded paragraph.
+- For photorealism, explicitly say `photorealistic` or real-photo language, then add natural texture and everyday imperfections.
+- Use camera and lens terms as look/framing cues, not as exact physical guarantees.
+- Start latency-sensitive or high-volume work at `quality: "low"`; move to `medium` or `high` for dense text, small labels, detailed infographics, close portraits, identity-sensitive edits, and final assets.
+- For surgical edits, say `change only X` and `keep everything else the same`, then repeat the preserve list on follow-up iterations.
+- For multi-image inputs, label each reference as `Image 1`, `Image 2`, etc. and say which image provides subject, style, setting, lighting, pose, or composition.
+- Iterate with small single-change follow-ups instead of piling unrelated fixes into one long prompt.
+
 ## Product / ad
 
 Make the product the anchor:
