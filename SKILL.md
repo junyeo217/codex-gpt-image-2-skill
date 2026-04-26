@@ -1,6 +1,6 @@
 ---
 name: gpt-image-2
-description: Use when the user wants GPT Image 2 / GPT-Image-2.0 prompt design, reverse prompting, image editing guidance, reference-image workflows, or production-ready visual prompts for posters, thumbnails, product shots, characters, book covers, ads, UI mockups, and cinematic images.
+description: Use when the user wants GPT Image 2 / GPT-Image-2.0 prompt design, reverse prompting, image editing guidance, reference-image workflows, or production-ready visual prompts for posters, thumbnails, product shots, characters, book covers, ads, UI mockups, infographics, diagrams, charts, comics, logos, and cinematic images.
 ---
 
 # GPT Image 2
@@ -36,7 +36,7 @@ Keep slots short, concrete, and non-overlapping. The PDF experiments show qualit
 
 ## Workflow
 
-1. Identify the use case: portrait, cinematic still, poster, thumbnail, product shot, character concept, novel/book cover, ad banner, UI/mockup, infographic, or edit/reference workflow.
+1. Identify the use case: portrait, cinematic still, poster, thumbnail, product shot, character concept, novel/book cover, ad banner, UI/mockup, infographic, logo, comic strip, slide/diagram/chart, educational visual, or edit/reference workflow.
 2. Convert vague requests into the slot stack. Ask at most one clarification only if the missing detail changes the medium or deliverable.
 3. For text in the image, quote the exact text and specify placement, font style, surface integration, and "no extra text".
 4. For realism, specify capture language: camera/film/lens, lighting source, material texture, depth of field, color palette, and practical constraints.
@@ -44,6 +44,10 @@ Keep slots short, concrete, and non-overlapping. The PDF experiments show qualit
 6. Add negative constraints only for likely failure modes: watermark, logo, extra text, malformed hands, extra limbs, face drift, plastic skin, over-sharpening, layout drift.
 7. Choose output settings deliberately: size/aspect, quality, format, background, and whether transparent output is required.
 8. After generation, inspect the result against the prompt slots and iterate by correcting the missing slot, not by adding generic style words.
+
+## Specialized use cases
+
+For infographics, translation-in-image, natural photoreal, logos, ads, comics, UI mockups, scientific visuals, slides, diagrams, charts, style transfer, virtual try-on, drawing-to-image, product mockups, real-text marketing creatives, lighting/weather edits, object removal, person insertion, multi-image compositing, interior swaps, collectibles, and children's book art, read `references/prompt-frameworks.md`.
 
 ## API notes are secondary
 
@@ -58,9 +62,9 @@ This skill is primarily for prompts, reverse prompting, image-editing instructio
 
 Read as needed:
 
-- `references/prompt-frameworks.md` for detailed prompt patterns.
+- `references/prompt-frameworks.md` for detailed prompt patterns and specialized use-case playbooks.
 - `references/api-and-codex-routes.md` only when the user explicitly asks about API, Codex CLI, OAuth-wrapper, or plugin implementation notes.
-- `references/source-notes.md` for distilled notes from the PDF, Notion page, GitHub repos, and official docs.
+- `references/source-notes.md` for distilled notes from the PDF, Notion page, GitHub repos, Soylab guide, and official docs.
 
 ## Helper script
 
