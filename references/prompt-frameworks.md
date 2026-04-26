@@ -82,6 +82,36 @@ material palette, expression, camera/framing, constraints for anatomy and identi
 
 For consistency across multiple images, repeat identity anchors exactly and state which details must not change.
 
+## Use-case playbook
+
+Use these compact patterns when the user names a specific deliverable.
+
+- **Infographic**: define the topic, audience, information hierarchy, labeled modules, arrows/flow, icon style, and reading order. Use higher quality for dense text or diagrams.
+- **Translation in image**: preserve layout, icons, objects, composition, and style; change only the requested text language. State "do not change any other aspect."
+- **Natural photoreal**: specify camera/lens, eye-level or candid framing, real skin/material texture, imperfect everyday details, natural color, and no heavy retouching.
+- **World-knowledge scene**: specify exact place, era/date, clothing, staging, environment, and realism level. Avoid unsupported factual claims when accuracy matters.
+- **Logo**: request original non-infringing marks, simple vector-like shapes, strong silhouette, balanced negative space, flat design, centered presentation, and no watermark.
+- **Advertisement**: write a creative brief first: brand personality, audience, culture, product, tagline, composition, color direction, and exact text once.
+- **Comic strip**: define panel count, panel order, recurring character consistency, action beat per panel, speech/text rules, and page orientation.
+- **UI mockup**: specify device/surface, screen hierarchy, typography style, component density, interaction state, and whether text must be readable or placeholder.
+- **Scientific / educational visual**: prioritize accurate labels, simplified structure, readable modules, callouts, arrows, scale cues, and no decorative clutter.
+- **Slides, diagrams, charts**: define slide size, title hierarchy, chart type, legend, axis/labels, annotation style, and how much real text should appear.
+- **Product shot / mockup**: isolate the product, keep shape accurate, state background, shadow/reflection behavior, edge cleanliness, and whether packaging/text must remain readable.
+
+## Edit and reference workflows
+
+- **Style transfer**: name the source image as the style reference and the new subject separately; preserve only style unless identity/layout should also remain.
+- **Virtual try-on**: preserve face, identity, body shape, pose, skin tone, and camera angle; change only the garment/accessory.
+- **Drawing to image**: preserve the drawing's composition and object relationships while upgrading material, lighting, realism, and environment.
+- **Marketing creative with real text**: quote exact copy, place it once, define font style and integration, and forbid extra text or random letters.
+- **Lighting/weather transformation**: keep subject, framing, and scene geometry; change only lighting, time of day, weather, mood, and reflections.
+- **Object removal**: name the object to remove and describe how the background should be reconstructed; forbid artifacts, halos, duplicate objects, and smudges.
+- **Person insertion**: specify the target scene, scale, perspective, contact shadows, lighting match, and which person identity must be preserved.
+- **Multi-image compositing**: assign references as `Image 1`, `Image 2`, etc.; state which image provides subject, setting, style, lighting, and composition.
+- **Interior design swap**: preserve room geometry and camera angle; change furniture, palette, materials, decor, and lighting as requested.
+- **Collectible / plush / keychain**: specify product form, packaging or display base, materials, scale, cute/detail level, and centered catalog presentation.
+- **Children's book art**: specify age range, emotional tone, medium, character consistency, safe composition, simple readable action, and warm color palette.
+
 ## Iteration by subtraction
 
 When output drifts, locate the missing slot:
