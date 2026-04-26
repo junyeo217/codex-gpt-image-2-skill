@@ -1,6 +1,6 @@
 # Source Notes
 
-These are distilled notes from official documentation, user-provided prompt experiments, and public community workflows. They are not a full copy of the sources.
+These are distilled notes from official documentation, user-provided prompt experiments, public community workflows, and the Soylab GPT Image 2 web guide captured as a PDF. They are not a full copy of the sources.
 
 ## Official docs checked on 2026-04-26
 
@@ -12,15 +12,16 @@ These are distilled notes from official documentation, user-provided prompt expe
 - The guide says `gpt-image-2` does not currently support transparent backgrounds.
 - Flexible size constraints: max edge <= 3840px, both edges multiples of 16, long:short <= 3:1, total pixels 655,360 to 8,294,400.
 
-## Notion guide
+## Prompt guides
 
-The public Notion page title was `GPT-Image-2 활용 가이드`. Important takeaways:
+The reviewed prompt guides included GPT Image 2 web and document references. Important takeaways:
 
 - Treat images as structured visual language, not decoration.
 - Use a simple `Subject + Context + Style` draft framework, then expand into production slots.
 - For photography, specify camera/film/lens, lighting, film texture, subject details, wardrobe, pose, expression, background, negative constraints, and aspect ratio.
 - For text rendering, quote the exact text, specify font style, placement, and surface integration.
 - For cinematic images, describe a real shot: film still, lens, motivated lighting, depth of field, film stock, blocking, and color palette.
+- Use case patterns worth preserving include infographics, translation inside images, natural photoreal scenes, world-knowledge scenes, original logos, ads, comic strips, UI mockups, scientific/educational visuals, slides, diagrams, charts, style transfer, virtual try-on, drawing-to-image, product mockups, real-text marketing creatives, lighting/weather edits, object removal, person insertion, multi-image compositing, interior swaps, collectibles, and children's book art.
 
 ## PDF: Prompt Subtractions
 
