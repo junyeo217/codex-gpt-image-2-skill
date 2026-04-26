@@ -4,16 +4,17 @@
 
 A Codex skill for GPT Image 2 prompt design, reverse prompting, image editing guidance, and production-ready visual brief construction.
 
-This repository is a **Codex skill**, not an image model, not an API wrapper, and not a standalone image-generation service. It gives Codex a compact production workflow for turning vague visual ideas or reference images into structured GPT Image 2 prompts and practical creative direction.
+This repository is a **Codex skill**, not an image model, not an API wrapper, and not a standalone image-generation service. It gives Codex a compact workflow for turning vague visual ideas, reference images, or production requirements into structured GPT Image 2 prompts and practical creative direction.
 
 ## What This Skill Is For
 
 Use this skill when you want Codex to help with:
 
-- Production-ready GPT Image 2 prompts
-- Reverse prompting from a reference image into a reusable prompt
+- Production-ready GPT Image 2 prompts and visual briefs
+- Reverse prompting from a reference image into a reusable reproduction prompt
 - Image editing instructions that separate preserved details from requested changes
-- Cinematic posters, portraits, product shots, ads, thumbnails, UI mockups, infographics, and character concepts
+- Cinematic posters, portraits, product shots, ads, thumbnails, UI mockups, infographics, detail-page visuals, logos, comics, diagrams, charts, slides, and character concepts
+- Specialized image workflows such as translation inside images, virtual try-on, drawing-to-image, product mockups, object removal, person insertion, lighting/weather changes, and multi-image compositing
 - Prompt QA, failure diagnosis, and targeted iteration
 - Visual brief cleanup before generating images in Codex, ChatGPT, or another GPT Image 2 workflow
 
@@ -35,7 +36,7 @@ The skill uses a structured prompt stack inspired by prompt-subtraction testing.
 [Output]
 ```
 
-This structure is especially useful for layout-sensitive work such as posters, thumbnails, e-commerce detail pages, product ads, and images with rendered text.
+This structure is especially useful for layout-sensitive work such as posters, thumbnails, e-commerce detail pages, product ads, infographics, educational visuals, UI mockups, and images with rendered text.
 
 ## Install
 
@@ -75,6 +76,12 @@ Design a product-detail-page visual:
 Use $gpt-image-2 to create a full cosmetic product detail page image prompt, not just a hero image.
 ```
 
+Create a structured infographic prompt:
+
+```text
+Use $gpt-image-2 to create an infographic prompt explaining the 5 steps of a skincare routine for first-time customers.
+```
+
 Diagnose a weak prompt:
 
 ```text
@@ -108,9 +115,9 @@ Use $gpt-image-2 to reverse-prompt this image into:
 
 For image edits, the skill separates:
 
-- Details that must be preserved, such as identity, pose, product shape, layout, or camera angle
-- Details that should change, such as background, clothing, color palette, style, object placement, or text
-- Constraints that prevent unwanted drift
+- Details that must be preserved, such as identity, pose, product shape, layout, camera angle, or room geometry
+- Details that should change, such as background, clothing, color palette, style, object placement, weather, lighting, or text
+- Constraints that prevent unwanted drift, such as face changes, broken hands, extra logos, text corruption, halos, smudges, or layout collapse
 
 This helps Codex produce edit instructions that are less ambiguous and easier to verify.
 
@@ -162,12 +169,12 @@ python scripts/compose_prompt.py check-size --size 1536x1024
 - This skill does not prove which backend image model a Codex UI tool uses unless the runtime exposes that information.
 - For deterministic API work, explicitly set `model="gpt-image-2"`; API notes are provided only as supplementary reference.
 - Reverse prompting creates a useful reproduction prompt, not the exact original prompt.
-- The repository does not include the original PDF, Notion page text, or copied prompt collections.
+- The repository does not include the original PDF, Notion page text, Soylab page content, or copied prompt collections.
 - Always follow OpenAI usage policies and applicable rights when using real people, brands, logos, or copyrighted references.
 
 ## Sources
 
-This skill distills patterns from official OpenAI documentation, prompt-subtraction experiments, and public GPT Image 2 community workflows. Source notes are summarized in [references/source-notes.md](references/source-notes.md).
+This skill distills patterns from official OpenAI documentation, user-provided prompt-subtraction experiments, the Soylab GPT Image 2 guide, and public GPT Image 2 community workflows. Source notes are summarized in [references/source-notes.md](references/source-notes.md).
 
 ## License
 
