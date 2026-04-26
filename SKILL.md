@@ -42,7 +42,7 @@ Keep slots short, concrete, and non-overlapping. The PDF experiments show qualit
 4. For realism, specify capture language: camera/film/lens, lighting source, material texture, depth of field, color palette, and practical constraints.
 5. For edits, separate preserved identity/composition from the requested transformation.
 6. Add negative constraints only for likely failure modes: watermark, logo, extra text, malformed hands, extra limbs, face drift, plastic skin, over-sharpening, layout drift.
-7. Choose output settings deliberately: size/aspect, quality, format, background, and whether transparent output is required.
+7. Choose output settings deliberately: size/aspect, quality, format, background, and whether transparent output is required. Treat sizes above 2K/QHD as experimental and prefer 2K or below when reliability matters.
 8. After generation, inspect the result against the prompt slots and iterate by correcting the missing slot, not by adding generic style words.
 
 ## Specialized use cases
@@ -55,10 +55,10 @@ This skill is primarily for prompts, reverse prompting, image-editing instructio
 
 - Official model: `gpt-image-2`; snapshot observed in docs: `gpt-image-2-2026-04-21`.
 - Supported image endpoints: `/v1/images/generations` and `/v1/images/edits`.
-- `gpt-image-2` accepts text and image input, outputs images, and automatically uses high-fidelity image inputs for edit/reference workflows.
+- `gpt-image-2` accepts text and image input and outputs images. Do not depend on `input_fidelity` for this model; the official model summary says it is already high fidelity by default.
 - `background: "transparent"` is not supported by `gpt-image-2` in the official guide; use `opaque` or `auto`, or post-process transparency separately.
-- Size can be flexible, but keep both edges multiples of 16, max edge <= 3840px, aspect ratio <= 3:1, and total pixels between 655,360 and 8,294,400.
-- Use `quality: "low"` for drafts, `medium` for review assets, and `high` for finals.
+- Size can be flexible, but keep both edges multiples of 16, max edge < 3840px, aspect ratio <= 3:1, and total pixels between 655,360 and 8,294,400. If a 4K/UHD target is requested, round down to a valid size such as `3824x2144`.
+- Use `quality: "low"` for drafts, high-volume experimentation, and latency-sensitive work. Compare `medium` or `high` for dense text, detailed infographics, close portraits, identity-sensitive edits, and final/high-resolution assets.
 
 Read as needed:
 
