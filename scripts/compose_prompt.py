@@ -75,16 +75,36 @@ def check_size(args: argparse.Namespace) -> int:
     short_edge = min(width, height)
     checks = {
         "both_edges_multiple_of_16": width % 16 == 0 and height % 16 == 0,
-        "max_edge_lte_3840": long_edge <= 3840,
+        "max_edge_lt_3840": long_edge < 3840,
         "aspect_ratio_lte_3_to_1": long_edge / short_edge <= 3,
         "pixels_in_range": 655_360 <= pixels <= 8_294_400,
+        "within_2k_reliability_boundary": pixels <= 3_686_400,
     }
-    ok = all(checks.values())
+    ok = all(
+        checks[key]
+        for key in (
+            "both_edges_multiple_of_16",
+            "max_edge_lt_3840",
+            "aspect_ratio_lte_3_to_1",
+            "pixels_in_range",
+        )
+    )
+    warnings = []
+    if long_edge >= 3840:
+        warnings.append(
+            "Official guidance says the maximum edge must be less than 3840px; "
+            "round UHD targets down, e.g. 3824x2144."
+        )
+    if pixels > 3_686_400:
+        warnings.append(
+            "Above 2560x1440 / 2K, official guidance treats output as experimental and more variable."
+        )
     print(json.dumps({
         "ok": ok,
         "size": f"{width}x{height}",
         "pixels": pixels,
         "checks": checks,
+        "warnings": warnings,
     }, indent=2))
     return 0 if ok else 1
 
