@@ -1,6 +1,6 @@
 interface:
   display_name: "GPT Image 2"
-  short_description: "Structured GPT Image 2 prompts, reverse prompting, edits, and visual briefs."
+  short_description: "Structured GPT Image 2 prompts, photoreal direction, reverse prompting, edits, and visual briefs."
   default_prompt: "Use $gpt-image-2 to turn my image idea into a production-ready visual prompt."
 policy:
   allow_implicit_invocation: true
