@@ -1,6 +1,6 @@
 ---
 name: gpt-image-2
-description: Use when the user wants GPT Image 2 / GPT-Image-2.0 prompt design, reverse prompting, image editing guidance, reference-image workflows, or production-ready visual prompts for posters, thumbnails, product shots, characters, book covers, ads, UI mockups, infographics, diagrams, charts, comics, logos, and cinematic images.
+description: Use when the user wants GPT Image 2 / GPT-Image-2.0 prompt design, reverse prompting, image editing guidance, reference-image workflows, or production-ready visual prompts for posters, thumbnails, product shots, characters, book covers, ads, UI mockups, infographics, diagrams, charts, comics, logos, photorealistic photography, camera/lens/exposure direction, lighting, color grading, composition, and cinematic images.
 ---
 
 # GPT Image 2
@@ -49,6 +49,26 @@ Keep slots short, concrete, and non-overlapping. The PDF experiments show qualit
 
 For infographics, translation-in-image, natural photoreal, logos, ads, comics, UI mockups, scientific visuals, slides, diagrams, charts, style transfer, virtual try-on, drawing-to-image, product mockups, real-text marketing creatives, lighting/weather edits, object removal, person insertion, multi-image compositing, interior swaps, collectibles, and children's book art, read `references/prompt-frameworks.md`.
 
+## Photography reference
+
+For photorealistic, cinematic, editorial, documentary, fashion, product, travel, architecture, food, sports, or street-photography prompts, use the photo prompt master reference in `references/photo-prompt-master/`.
+
+Start with `references/photo-prompt-master/00_index.md`, then load only the relevant file:
+
+- `09_genre_prompt_combos.md` for fast genre-specific prompt combinations.
+- `01_camera_lens_exposure.md` for camera body, lens, focal length, aperture, shutter, ISO, film stock, sensor, and exposure language.
+- `02_light.md` for lighting pattern, source quality, direction, modifiers, and practical/studio light setups.
+- `03_composition.md` for framing, shot size, angle, perspective, visual hierarchy, and compositional theory.
+- `04_color.md` for color palettes, color space, grading, contrast, and harmony.
+- `05_mood_postprocessing.md` for texture, filters, post-processing, print look, and finish.
+- `06_genre_art_history.md` for photographic genres, art movements, painting references, and cinematography references.
+- `07_subject_direction_environment.md` for pose, gaze, wardrobe, props, environment, and location direction.
+- `08_time_weather_mood.md` for time of day, weather, emotional tone, and narrative.
+- `10a_real_world_basic.md` and `10b_real_world_advanced.md` when exact photographic numbers or production specs matter.
+- `11_master_tips.md` before finalizing complex photo prompts; use its checklist to remove vague style stacking and contradictory camera language.
+
+When using this reference, translate camera terms into image-generator instructions rather than pretending the model performs real optics. Prefer coherent bundles: one lens family, one lighting setup, one color treatment, one post-processing finish, and an output constraint.
+
 ## API notes are secondary
 
 This skill is primarily for prompts, reverse prompting, image-editing instructions, and visual direction. Only use API details when the user explicitly asks for implementation help.
@@ -63,6 +83,7 @@ This skill is primarily for prompts, reverse prompting, image-editing instructio
 Read as needed:
 
 - `references/prompt-frameworks.md` for detailed prompt patterns and specialized use-case playbooks.
+- `references/photo-prompt-master/00_index.md` for detailed photographic vocabulary and genre-specific combinations.
 - `references/api-and-codex-routes.md` only when the user explicitly asks about API, Codex CLI, OAuth-wrapper, or plugin implementation notes.
 - `references/source-notes.md` for distilled notes from the PDF, Notion page, GitHub repos, Soylab guide, and official docs.
 
