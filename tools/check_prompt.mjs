@@ -8,10 +8,15 @@
 // .txt  : 주석 라인(#으로 시작) 제거 후 프롬프트 본문을 검사한다. 단, "size:" 선언은
 //         주석 안에 있어도 파싱한다(예: `# size: auto`).
 // .jsonl: 각 레코드의 prompt(또는 full_prompt)/size/id 필드를 검사한다.
-// --tier1: 렌더 텍스트가 있다고 강제 선언 — 따옴표 자동 감지가 실패하는 경우
-//          Tier-1 화이트리스트 7종을 자유 네거티브 스캔에서 면제시키는 데 쓴다.
+// --tier1: 렌더 텍스트가 있다고 강제 선언 — 따옴표 자동 감지가 실패하는 경우 쓴다.
+//          --tier1이 지정되면 Tier-1 동결 문장이 본문에 byte-exact(em dash 포함)로
+//          "실제로" 있어야 하며(없으면 E-TIER1-MISSING), 화이트리스트 7종(no watermark 등)의
+//          자유 네거티브 스캔 면제도 그 문장이 실제로 있을 때만 적용된다.
+//          --tier1 없이 따옴표/"Text-in-image:" 라벨로 렌더 텍스트가 자동 감지된 경우,
+//          정본 문장이 없으면 경고만 낸다(W-TIER1-MISSING, non-poster 프롬프트 오탐 방지).
 //
 // 종료 코드: 에러가 하나라도 있으면 1, 없으면 0(경고만 있어도 0).
+// 빈 본문(주석/공백만 남는 경우)은 E-EMPTY 에러로 처리한다.
 
 import { readFileSync } from "node:fs";
 
@@ -155,6 +160,26 @@ function isValidTier1Sentence(normalized) {
   return matchesWhitelistSequence(body);
 }
 
+// 정본 문장 매치 대상 추출 — 공백만 접어(collapse) 정규화한다. 대시 문자(em dash 등)는
+// 절대 정규화하지 않는다: 정본 비교는 byte-exact여야 하므로 ASCII " - " 변형은
+// 반드시 불일치로 남아야 한다 (E-TIER1-MUTATED).
+function normalizeTier1Match(raw) {
+  return raw.replace(/\s+/g, " ").trim();
+}
+
+function findTier1Matches(text) {
+  const re = /All text appears once[^.]*\./g;
+  const matches = [];
+  let m;
+  while ((m = re.exec(text))) matches.push(m);
+  return matches;
+}
+
+// 본문 어딘가에 유효한(byte-exact, em dash 포함) Tier-1 동결 문장이 실제로 있는지.
+function hasValidTier1Sentence(text) {
+  return findTier1Matches(text).some((m) => isValidTier1Sentence(normalizeTier1Match(m[0])));
+}
+
 // ── 개별 체크 ──
 
 function checkNegatives(text, offsets, tier1Required, errors) {
@@ -186,14 +211,14 @@ function checkNegatives(text, offsets, tier1Required, errors) {
 }
 
 function checkTier1(text, offsets, errors) {
-  const re = /All text appears once[^.]*\./g;
-  let m;
-  while ((m = re.exec(text))) {
-    const normalized = m[0].replace(/\s+/g, " ").trim().replace(/\s[-–]{1,2}\s/g, " — ");
+  for (const m of findTier1Matches(text)) {
+    // 정본 비교는 raw 텍스트 기준(byte-exact, em dash 필수) — 공백만 접어 정규화하고
+    // 대시 문자는 절대 바꾸지 않는다. ASCII " - " 등으로 변형된 문장은 반드시 실패해야 한다.
+    const normalized = normalizeTier1Match(m[0]);
     if (!isValidTier1Sentence(normalized)) {
       pushFinding(
         errors, "E-TIER1-MUTATED", lineAt(offsets, m.index), excerpt(text, m.index, 100),
-        `Tier-1 동결 문장이 원문과 다르게 변형됨 — text-in-image.md의 정확한 문구를 그대로 인용: "${TIER1_CANON}"`
+        `Tier-1 동결 문장이 원문과 다르게 변형됨 — text-in-image.md의 정확한 문구를 그대로(em dash 포함) 인용: "${TIER1_CANON}"`
       );
     }
   }
@@ -323,10 +348,27 @@ function checkSizeDeclarations(rawLines, errors) {
 function validateBody(bodyLines, opts) {
   const errors = [], warnings = [];
   const { text, offsets } = buildIndexedBody(bodyLines);
-  const tier1Required = quotesOf(text).length > 0 || /Text-in-image\s*:/i.test(text) || !!opts.tier1;
+  const tier1Explicit = !!opts.tier1;
+  const renderTextDetected = quotesOf(text).length > 0 || /Text-in-image\s*:/i.test(text);
+  const canonicalPresent = hasValidTier1Sentence(text);
 
-  checkNegatives(text, offsets, tier1Required, errors);
+  // 화이트리스트 7종(no watermark 등)을 자유 네거티브 스캔에서 면제하는 것은
+  // 정본 문장이 "실제로" 본문에 있을 때만이다 — --tier1 플래그 자체는 면제 사유가 아니다.
+  checkNegatives(text, offsets, canonicalPresent, errors);
   checkTier1(text, offsets, errors);
+
+  if (tier1Explicit && !canonicalPresent) {
+    pushFinding(
+      errors, "E-TIER1-MISSING", lineAt(offsets, 0), excerpt(text, 0, 60),
+      `--tier1 지정됨 — Tier-1 동결 문장이 본문에 없음(byte-exact, em dash 필수). text-in-image.md의 정확한 문구를 그대로 인용: "${TIER1_CANON}"`
+    );
+  } else if (!tier1Explicit && renderTextDetected && !canonicalPresent) {
+    pushFinding(
+      warnings, "W-TIER1-MISSING", lineAt(offsets, 0), excerpt(text, 0, 60),
+      `렌더 텍스트가 감지됨(따옴표 또는 "Text-in-image:" 라벨) — Tier-1 동결 문장이 없음. 실제 렌더 컷이면 다음 문장을 그대로 추가 권장: "${TIER1_CANON}"`
+    );
+  }
+
   checkSdMj(text, offsets, errors);
   checkBracketPrefix(text, offsets, errors);
   checkMixedRenderStrings(text, offsets, errors);
@@ -346,6 +388,21 @@ export function checkTxtContent(raw, opts = {}) {
   rawLines.forEach((line, i) => {
     if (!line.trim().startsWith("#")) bodyLines.push({ text: line, lineNo: i + 1 });
   });
+
+  // 주석(#)과 공백을 제거한 뒤 본문이 완전히 비어 있으면 그 자체가 에러다.
+  const bodyIsEmpty = bodyLines.every((line) => line.text.trim() === "");
+  if (bodyIsEmpty) {
+    return {
+      errors: [{
+        code: "E-EMPTY",
+        line: 1,
+        excerpt: "(본문 없음)",
+        hint: "prompt body is empty after comment stripping",
+      }],
+      warnings: [],
+    };
+  }
+
   const { errors, warnings } = validateBody(bodyLines, opts);
   checkSizeDeclarations(rawLines, errors); // 주석의 `# size: ...` 선언도 파싱
   return { errors, warnings };

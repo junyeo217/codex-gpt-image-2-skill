@@ -1,0 +1,7 @@
+# category: poster
+# size: 1024x1536
+
+Scene: 겨울 야시장 포스터, 노점 간판에 한글 문구가 크게 적혀 있다.
+Text-in-image: headline "겨울 특별전" dominant, centered in the title band.
+All text appears once, perfectly legible - no duplicate text, no extra words, no invented glyphs, no watermark.
+AR 3:4

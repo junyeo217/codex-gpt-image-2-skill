@@ -33,7 +33,10 @@ def load_data(args: argparse.Namespace) -> dict[str, str]:
     data: dict[str, str] = {}
     if args.json:
         raw = Path(args.json).read_text(encoding="utf-8")
-        obj = json.loads(raw)
+        try:
+            obj = json.loads(raw)
+        except json.JSONDecodeError as exc:
+            raise SystemExit(f"Invalid JSON in {args.json}: {exc}")
         if not isinstance(obj, dict):
             raise SystemExit("--json must point to a JSON object")
         data.update({str(k): "" if v is None else str(v) for k, v in obj.items()})
@@ -47,9 +50,19 @@ def load_record(input_path: str, record_id: str) -> tuple[dict[str, object], str
     path = Path(input_path)
     raw = path.read_text(encoding="utf-8")
     if path.suffix.lower() == ".jsonl":
-        records = [json.loads(line) for line in raw.splitlines() if line.strip()]
+        records: list[object] = []
+        for line_no, line in enumerate(raw.splitlines(), start=1):
+            if not line.strip():
+                continue
+            try:
+                records.append(json.loads(line))
+            except json.JSONDecodeError as exc:
+                raise SystemExit(f"Invalid JSON on line {line_no} of {path}: {exc}")
     else:
-        parsed = json.loads(raw)
+        try:
+            parsed = json.loads(raw)
+        except json.JSONDecodeError as exc:
+            raise SystemExit(f"Invalid JSON in {path}: {exc}")
         records = parsed if isinstance(parsed, list) else [parsed]
 
     for record in records:
@@ -68,6 +81,9 @@ def record_prompt(record: dict[str, object]) -> str:
 
 
 def compose(args: argparse.Namespace) -> int:
+    if not args.brief and not args.json:
+        print("Provide --brief or --json", file=sys.stderr)
+        return 2
     data = load_data(args)
     default_constraints = "clean unbranded finish, single rendering of any requested text"
     if args.no_default_constraints:
@@ -132,6 +148,9 @@ def parse_size(size: str) -> tuple[int, int]:
 
 def check_size(args: argparse.Namespace) -> int:
     width, height = parse_size(args.size)
+    if width == 0 or height == 0:
+        print(json.dumps({"ok": False, "error": "zero dimension"}, indent=2))
+        return 1
     pixels = width * height
     long_edge = max(width, height)
     short_edge = min(width, height)

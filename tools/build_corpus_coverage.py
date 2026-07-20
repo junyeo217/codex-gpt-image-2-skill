@@ -37,7 +37,10 @@ def record_count(path: Path, text: str) -> int | None:
         case ".jsonl":
             return sum(1 for line in text.splitlines() if line.strip())
         case ".json":
-            parsed = json.loads(text)
+            try:
+                parsed = json.loads(text)
+            except json.JSONDecodeError as exc:
+                raise SystemExit(f"Invalid JSON in {path}: {exc}")
             if isinstance(parsed, list):
                 return len(parsed)
             return 1

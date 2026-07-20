@@ -28,5 +28,17 @@
     "mode": "txt",
     "flags": [],
     "expect": { "ok": false, "codes": ["E-SIZE-LOCK", "W-DEAD-WORD"] }
+  },
+  {
+    "path": "bad/bad_tier1_mutated.txt",
+    "mode": "txt",
+    "flags": [],
+    "expect": { "ok": false, "codes": ["E-TIER1-MUTATED"] }
+  },
+  {
+    "path": "bad/bad_empty.txt",
+    "mode": "txt",
+    "flags": [],
+    "expect": { "ok": false, "codes": ["E-EMPTY"] }
   }
 ]

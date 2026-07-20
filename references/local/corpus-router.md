@@ -6,7 +6,10 @@ This repository is upgraded from the complete local prompt corpus recorded in
 [`corpus-coverage.json`](./corpus-coverage.json). The manifest is deliberately
 source-preserving: it records every file's relative path, size, line count,
 structured-record count where applicable, and SHA-256 without republishing the
-200 MB source collection.
+200 MB source collection. `corpus-coverage.json` is machine-generated locally by
+`tools/build_corpus_coverage.py` and is intentionally not committed (it is
+gitignored); `tools/validate_skill.py` treats it as optional and skips the
+coverage check when it is absent.
 
 ## Select the right corpus family
 
