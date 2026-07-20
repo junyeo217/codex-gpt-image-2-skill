@@ -169,8 +169,8 @@ gelatin print aesthetic. Over-the-shoulder framing.
 16mm documentary film still, Korean rural landscape at dawn.
 An empty dirt road stretches between rice paddies, morning mist
 rising from the water. A single pair of worn rubber shoes left
-abandoned at the road's edge — the only human trace, static, no
-one in frame. Mountains emerging from fog layers in the background.
+abandoned at the road's edge — the only human trace, static, the
+shoes standing alone as the sole presence in frame. Mountains emerging from fog layers in the background.
 camera: telephoto compression flattening mist and mountain layers.
 film stock: Kodak Vision3 500T, lifted blacks, muted cool shadows.
 Motivated lighting from an overcast pre-dawn sky only. Contemplative

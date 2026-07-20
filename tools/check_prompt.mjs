@@ -62,6 +62,13 @@ const GEAR_BRANDS = [
 
 const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
+// jsonl id 필드의 타입 진단 라벨 — E-JSONL-FIELD 메시지의 "got <type>"에 쓴다.
+function idTypeLabel(v) {
+  if (v === "") return "empty string";
+  if (Array.isArray(v)) return "array";
+  return typeof v;
+}
+
 // ── 공통 유틸 ──
 
 function pushFinding(list, code, line, excerptStr, hint) {
@@ -463,8 +470,16 @@ export function checkJsonlContent(raw, opts = {}) {
       return;
     }
 
-    if (rec.id === undefined || rec.id === null || rec.id === "") {
+    if (rec.id === undefined || rec.id === null) {
       pushFinding(errors, "E-JSONL-FIELD", lineNo, JSON.stringify(rec).slice(0, 60), "필수 필드 누락: id.");
+    } else if (typeof rec.id !== "string" || rec.id === "") {
+      // id는 반드시 비어있지 않은 문자열이어야 한다. Set 기반 dedup은 참조 동등성으로
+      // 비교하므로 객체/배열 id({"a":1} 두 개처럼 내용은 같지만 참조가 다른 값)는
+      // Set이 서로 다른 것으로 취급해 중복 탐지를 우회한다 — 타입 단계에서 먼저 차단한다.
+      pushFinding(
+        errors, "E-JSONL-FIELD", lineNo, JSON.stringify(rec).slice(0, 60),
+        `id must be a non-empty string, got ${idTypeLabel(rec.id)}.`
+      );
     } else if (ids.has(rec.id)) {
       pushFinding(errors, "E-JSONL-DUPID", lineNo, `id=${rec.id}`, `중복 id: ${rec.id} — 레코드마다 고유 id가 필요하다.`);
     } else {

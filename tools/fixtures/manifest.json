@@ -70,5 +70,11 @@
     "mode": "jsonl",
     "flags": [],
     "expect": { "ok": false, "codes": ["E-JSONL-FIELD"] }
+  },
+  {
+    "path": "bad/bad_jsonl_object_id.jsonl",
+    "mode": "jsonl",
+    "flags": [],
+    "expect": { "ok": false, "codes": ["E-JSONL-FIELD"] }
   }
 ]
