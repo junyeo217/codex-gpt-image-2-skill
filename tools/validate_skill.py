@@ -76,7 +76,12 @@ def main() -> int:
             errors.append(f"corpus coverage manifest is not valid JSON: {exc}")
             coverage_status = "invalid"
         else:
-            if manifest.get("schema_version") != 1 or not isinstance(manifest.get("files"), list):
+            if not isinstance(manifest, dict):
+                # A valid JSON document whose top level isn't an object (e.g. `[]` or `null`)
+                # would otherwise crash on manifest.get() below. Report it structurally instead.
+                errors.append("corpus coverage manifest must be a JSON object at the top level")
+                coverage_status = "invalid (top-level must be an object)"
+            elif manifest.get("schema_version") != 1 or not isinstance(manifest.get("files"), list):
                 errors.append("corpus coverage manifest has an invalid schema")
                 coverage_status = "invalid"
             else:

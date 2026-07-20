@@ -40,5 +40,17 @@
     "mode": "txt",
     "flags": [],
     "expect": { "ok": false, "codes": ["E-EMPTY"] }
+  },
+  {
+    "path": "bad/bad_jsonl_empty.jsonl",
+    "mode": "jsonl",
+    "flags": [],
+    "expect": { "ok": false, "codes": ["E-EMPTY"] }
+  },
+  {
+    "path": "bad/bad_tier1_outside_negative.txt",
+    "mode": "txt",
+    "flags": [],
+    "expect": { "ok": false, "codes": ["E-NEG-FREE"] }
   }
 ]

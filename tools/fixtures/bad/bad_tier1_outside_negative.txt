@@ -1,0 +1,16 @@
+# category: poster
+# size: 2048x2048
+# tier: 1
+# regression: 정본 동결 문장이 있어도, 그 문장 밖에 별도로 있는 화이트리스트 어휘는
+# 면제 대상이 아니다 — 이 컷은 아래 Scene 절의 "no logo" 때문에 E-NEG-FREE로 실패해야 한다.
+
+Scene: 겨울 야시장 포스터, 김이 피어오르는 붕어빵 노점이 화면 하단 2/3를 채운다, 촬영은 하이앵글. Scene: no logo on the market stall banner behind the vendor.
+Subject: 20대 후반 한국 여성 노점상, 다크브라운 로우 번 헤어, 짙은 쌍꺼풀에 브라운 홍채, 왼쪽 입가 아래 작은 점, 매트 베이지 립, 아이보리 누빔 패딩 #E9E2D4, 배경 #1C1A17, 카메라 거리 약 1.8m.
+Camera: 정면 아이레벨, 피사체를 화면 중앙에 배치, shallow depth of field, background falls off softly into creamy blur.
+Lighting: warm tungsten stall light from camera left, soft diffuse wraparound fill, key:fill 1:2, moderate shadow contrast.
+Color grading: 팔레트 #1C1A17 #E9E2D4 #C9642B #F2B705, warm 3200K-feel, complementary 색 조화.
+Texture/Medium: natural skin texture, visible pores, fine peach fuzz, glossy steam droplets on the glass counter.
+Text-in-image: headline "겨울 야시장" dominant, roughly one-third of canvas width, centered in the title band occupying the top third, generous negative space around the headline; subhead "붕어빵 한정 판매" at half the headline size, directly below, same alignment.
+render the Hangul characters exactly as given.
+All text appears once, perfectly legible — no duplicate text, no extra words, no invented glyphs, no watermark.
+AR 4:5

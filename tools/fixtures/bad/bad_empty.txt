@@ -1,5 +1,3 @@
 # category: none
 # size: 1024x1024
 # intentionally left blank after comment stripping — only comments and whitespace below
-
-

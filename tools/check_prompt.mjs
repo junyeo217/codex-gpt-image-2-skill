@@ -18,7 +18,8 @@
 // 종료 코드: 에러가 하나라도 있으면 1, 없으면 0(경고만 있어도 0).
 // 빈 본문(주석/공백만 남는 경우)은 E-EMPTY 에러로 처리한다.
 
-import { readFileSync } from "node:fs";
+import { readFileSync, realpathSync } from "node:fs";
+import { pathToFileURL } from "node:url";
 
 const SIZE_WHITELIST = ["1024x1024", "1024x1536", "1536x1024", "1792x1024", "1024x1792", "2048x2048"];
 
@@ -175,14 +176,24 @@ function findTier1Matches(text) {
   return matches;
 }
 
+// 본문에서 유효한(byte-exact, em dash 포함) Tier-1 동결 문장이 실제로 차지하는
+// 문자 구간(span)들을 전부 반환한다. 화이트리스트 네거티브 면제는 이 구간 "안"에서만
+// 적용되어야 한다 — 동결 문장 밖에 따로 있는 같은 어휘(예: 별도 Scene 절의 "no logo")는
+// 면제 대상이 아니다.
+function getValidTier1Spans(text) {
+  return findTier1Matches(text)
+    .filter((m) => isValidTier1Sentence(normalizeTier1Match(m[0])))
+    .map((m) => ({ start: m.index, end: m.index + m[0].length }));
+}
+
 // 본문 어딘가에 유효한(byte-exact, em dash 포함) Tier-1 동결 문장이 실제로 있는지.
 function hasValidTier1Sentence(text) {
-  return findTier1Matches(text).some((m) => isValidTier1Sentence(normalizeTier1Match(m[0])));
+  return getValidTier1Spans(text).length > 0;
 }
 
 // ── 개별 체크 ──
 
-function checkNegatives(text, offsets, tier1Required, errors) {
+function checkNegatives(text, offsets, validTier1Spans, errors) {
   const negLabelRe = /\bNegative\s*:/gi;
   let m;
   while ((m = negLabelRe.exec(text))) {
@@ -192,12 +203,13 @@ function checkNegatives(text, offsets, tier1Required, errors) {
     );
   }
 
+  // 화이트리스트 7종(no watermark 등)의 자유 네거티브 스캔 면제는 실제로 유효한 Tier-1
+  // 동결 문장이 차지하는 구간 "내부"에서만 적용한다. 그 구간을 공백으로 지워 스캔에서
+  // 제외하면, 문장 밖에 별도로 존재하는 같은 어휘는 그대로 아래 freeRe에 걸려
+  // E-NEG-FREE로 잡힌다.
   let scanText = text;
-  if (tier1Required) {
-    for (const phrase of TIER1_WHITELIST) {
-      const re = new RegExp(esc(phrase), "gi");
-      scanText = scanText.replace(re, (s) => " ".repeat(s.length));
-    }
+  for (const span of validTier1Spans) {
+    scanText = scanText.slice(0, span.start) + " ".repeat(span.end - span.start) + scanText.slice(span.end);
   }
 
   const freeRe = /\b(no|without|avoid)\s+[A-Za-z][A-Za-z'’-]*(?:\s+[A-Za-z'’-]+){0,2}/gi;
@@ -350,11 +362,13 @@ function validateBody(bodyLines, opts) {
   const { text, offsets } = buildIndexedBody(bodyLines);
   const tier1Explicit = !!opts.tier1;
   const renderTextDetected = quotesOf(text).length > 0 || /Text-in-image\s*:/i.test(text);
-  const canonicalPresent = hasValidTier1Sentence(text);
+  const validTier1Spans = getValidTier1Spans(text);
+  const canonicalPresent = validTier1Spans.length > 0;
 
-  // 화이트리스트 7종(no watermark 등)을 자유 네거티브 스캔에서 면제하는 것은
-  // 정본 문장이 "실제로" 본문에 있을 때만이다 — --tier1 플래그 자체는 면제 사유가 아니다.
-  checkNegatives(text, offsets, canonicalPresent, errors);
+  // 화이트리스트 7종(no watermark 등)을 자유 네거티브 스캔에서 면제하는 것은 정본 문장이
+  // "실제로" 본문에 있을 때, 그리고 그 문장이 차지하는 구간 "안"일 때만이다 — --tier1
+  // 플래그 자체는 면제 사유가 아니고, 동결 문장 밖의 같은 어휘도 면제 대상이 아니다.
+  checkNegatives(text, offsets, validTier1Spans, errors);
   checkTier1(text, offsets, errors);
 
   if (tier1Explicit && !canonicalPresent) {
@@ -380,18 +394,30 @@ function validateBody(bodyLines, opts) {
   return { errors, warnings };
 }
 
-// ── .txt 진입점 ──
-
-export function checkTxtContent(raw, opts = {}) {
+// 주석(#으로 시작하는 라인) 제거 후 남는 본문 라인들을 만든다. .txt와 jsonl의
+// prompt/full_prompt 필드 양쪽에서 공유하는 로직 — 어느 쪽이든 "주석/공백만 남는" 경우는
+// 동일하게 E-EMPTY여야 한다.
+function stripComments(raw) {
   const rawLines = raw.replace(/^﻿/, "").split(/\r?\n/);
   const bodyLines = [];
   rawLines.forEach((line, i) => {
     if (!line.trim().startsWith("#")) bodyLines.push({ text: line, lineNo: i + 1 });
   });
+  return { rawLines, bodyLines };
+}
+
+// 주석/공백만 남아 본문이 완전히 비어 있는지.
+function isBodyEmpty(bodyLines) {
+  return bodyLines.every((line) => line.text.trim() === "");
+}
+
+// ── .txt 진입점 ──
+
+export function checkTxtContent(raw, opts = {}) {
+  const { rawLines, bodyLines } = stripComments(raw);
 
   // 주석(#)과 공백을 제거한 뒤 본문이 완전히 비어 있으면 그 자체가 에러다.
-  const bodyIsEmpty = bodyLines.every((line) => line.text.trim() === "");
-  if (bodyIsEmpty) {
+  if (isBodyEmpty(bodyLines)) {
     return {
       errors: [{
         code: "E-EMPTY",
@@ -439,10 +465,19 @@ export function checkJsonlContent(raw, opts = {}) {
     if (promptField === null) {
       pushFinding(errors, "E-JSONL-FIELD", lineNo, JSON.stringify(rec).slice(0, 60), "필수 필드 누락: prompt.");
     } else {
-      const bodyLines = promptField.split(/\r?\n/).map((t, idx) => ({ text: t, lineNo: idx + 1 }));
-      const sub = validateBody(bodyLines, opts);
-      for (const e of sub.errors) errors.push({ ...e, line: lineNo });
-      for (const w of sub.warnings) warnings.push({ ...w, line: lineNo });
+      const { bodyLines } = stripComments(promptField);
+      if (isBodyEmpty(bodyLines)) {
+        // prompt/full_prompt 필드는 존재하지만 빈 문자열이거나 공백/주석만 남는 경우 —
+        // .txt 진입점과 동일하게 E-EMPTY로 잡는다(그 전까지는 validateBody를 그냥 통과했다).
+        pushFinding(
+          errors, "E-EMPTY", lineNo, JSON.stringify(rec).slice(0, 60),
+          "prompt(또는 full_prompt) 필드가 비어 있음(공백/주석만 존재) — 레코드에 유효한 프롬프트 본문이 필요하다."
+        );
+      } else {
+        const sub = validateBody(bodyLines, opts);
+        for (const e of sub.errors) errors.push({ ...e, line: lineNo });
+        for (const w of sub.warnings) warnings.push({ ...w, line: lineNo });
+      }
     }
 
     if (rec.size === undefined || rec.size === null || rec.size === "") {
@@ -516,5 +551,20 @@ function runCli() {
   }
 }
 
-const isMain = process.argv[1] && import.meta.url === `file://${process.argv[1]}`;
+// 경로에 공백/한글이 섞이면 import.meta.url은 percent-encode되지만 process.argv[1]은
+// raw string이라 `file://${process.argv[1]}` 같은 문자열 비교는 항상 불일치로 새고,
+// runCli()가 실행되지 않은 채 조용히 exit 0으로 빠진다. pathToFileURL()로 양쪽을
+// 동일하게 인코딩해 비교해야 이 경로들에서도 CLI가 실제로 실행된다.
+// 추가로 macOS의 /tmp → /private/tmp 같은 심볼릭 링크가 경로에 끼면, ESM 로더가
+// import.meta.url을 realpath로 정규화해버려 pathToFileURL(process.argv[1])만으로는
+// 여전히 불일치가 난다 — realpathSync로 심볼릭 링크까지 풀어서 비교한다(argv[1]이
+// 존재하지 않는 등 realpath가 실패하면 원본 경로로 폴백).
+function argvUrl(argvPath) {
+  try {
+    return pathToFileURL(realpathSync(argvPath)).href;
+  } catch {
+    return pathToFileURL(argvPath).href;
+  }
+}
+const isMain = !!process.argv[1] && import.meta.url === argvUrl(process.argv[1]);
 if (isMain) runCli();
