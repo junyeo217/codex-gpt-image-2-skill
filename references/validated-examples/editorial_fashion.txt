@@ -1,0 +1,22 @@
+# 용도: 패션 에디토리얼 — 룩북 단독 인물컷 (waist-up 85mm 결과 서술, 가상 모델 디스클레이머)
+# 레인: editorial
+# 사이즈: AR 3:4 (1024x1536), quality medium
+# 검증: 자가점검 9항 통과 — 컷타입 1개(lookbook_model)·스타일 1개·룩 프리셋 1개만 적용 / 가상 모델 문구 포함 / 텍스트 없음(Tier-1 미부착)
+
+Scene: 가상의 20대 후반 모델(공인 인물이 아닌 가상의 모델, a fictional model, not a real public figure)이 파리지앵 시크 스타일의 크림 트렌치코트를 입고 실내 스튜디오 창가에 서 있다. waist-up composition, 인물이 프레임 왼쪽 1/3에 배치되고 오른쪽은 넓은 네거티브 스페이스로 남는다. 정지된 자세로 몸을 살짝 창 쪽으로 돌린 채, 시선은 창밖을 응시한다. 한 손은 코트 깃을 가볍게 매만지듯 고정돼 있다.
+
+인물 디테일: 다크브라운 미디엄 웨이브 헤어를 한쪽으로 넘김, 옅은 쌍꺼풀에 헤이즐 홍채, 콧대가 곧고 높음, 무표정 시 입꼬리는 수평을 유지하는 입술에 매트 로즈 톤 마감. natural skin texture, visible pores, fine peach fuzz along the jawline catching the window light.
+
+의상: 크림 트렌치코트 #E8E2D4, 안에는 아이보리 실크 블라우스 #F5F0E6, 얇은 골드 체인 목걸이 하나.
+
+조명: soft diffuse daylight from a large window camera-left, key:fill 1:2, gentle wraparound shadow with a rounded soft edge, a faint catchlight visible in the iris.
+
+결과 서술(85mm): waist-up medium shot with compressed telephoto perspective, the subject lifted from a softly falling-off background, shallow depth of field concentrating focus on the face and coat collar.
+
+룩 프리셋(럭셔리 에디토리얼) 적용: hushed composition the viewer lowers their voice for — generous negative space, every element aligned, soft directional daylight with long gentle shadows, muted ivory and taupe palette, matte uncoated paper grain finish.
+
+색감: 팔레트 #E8E2D4 #F5F0E6 #B8A78E #6B5A47, warm 3400K, low-contrast midtones.
+
+배경: 스튜디오 벽은 무광 타우프 톤 #B8A78E 단색, 창틀의 실루엣만 배경에 남는다.
+
+AR 3:4

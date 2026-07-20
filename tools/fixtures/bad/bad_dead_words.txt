@@ -1,0 +1,8 @@
+# category: poster
+# size: auto
+
+Scene: 예쁘게, 고급스럽게, 세련되게 카페 라떼 한 잔이 놓인 테이블, award-winning, world-class 감성으로 촬영.
+Camera: 아이레벨, 전문가처럼 촬영한 느낌.
+Lighting: 감성적으로 부드러운 자연광.
+Color grading: 톤 앤 매너 있게, beautiful stunning 색감.
+AR 1:1

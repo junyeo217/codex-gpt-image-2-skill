@@ -70,6 +70,8 @@ Use this route only when the user specifically wants to use an existing local Co
 - Prefer `1024x1024`, `1024x1536`, `1536x1024`, or `2560x1440` for reliable production review. Treat anything above `2560x1440` as experimental.
 - Keep custom `gpt-image-2` sizes below a 3840px max edge, with both dimensions divisible by 16. If a requested UHD target uses `3840x2160`, round down to a valid size such as `3824x2144`.
 
+> ⚠️ 프롬프트/제작 흐름에서는 core-grammar.md의 6값 사이즈 화이트리스트만 사용한다. 위 임의 해상도 논의는 raw API 파라미터 탐구용 참고다.
+
 ## Verification
 
 At minimum:

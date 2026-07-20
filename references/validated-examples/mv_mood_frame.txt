@@ -1,0 +1,20 @@
+# 용도: 뮤직비디오 무드 프레임 — 옥상 노을 아나모픽 필름룩 단일 컷
+# 레인: music-video
+# 사이즈: AR 9:16 (1024x1792), quality medium
+# 검증: 자가점검 9항 통과 — 렌즈 계열 1종(아나모픽)만 사용·장비 브랜드명 없음 / HEX 5색 / 텍스트 없음(Tier-1 미부착)
+
+가상의 인디 보컬리스트 오리지널 캐릭터, 20대 중반, 마른 체형, 애시 그레이 숏컷 헤어, 옅은 쌍꺼풀에 짙은 갈색 홍채, 왼쪽 귓불에 작은 실버 링 피어싱 하나. 옥상 난간에 등을 기댄 채 완전히 정지된 자세로 서 있고, 고개는 살짝 왼쪽으로 기울어 노을을 향한다. 두 손은 난간을 가볍게 짚고 있다.
+
+의상: 오버사이즈 데님 재킷 #4A5568, 안에는 무광 블랙 이너 #101010, 목에 얇은 실버 체인 하나.
+
+헤어·메이크업: natural skin texture, visible pores, a faint highlight sheen along the cheekbone from the low sun, bare skin finish.
+
+조명: low sun backlighting from directly behind the subject, camera-left rim light bleeding along the jacket collar, key:fill 1:3, silhouette edges glowing while the front of the face rests in soft shadow.
+
+질감·색감 무드: 팔레트 #1B1420 #E8763C #4A5568 #F2C879 #101010, warm 3200K rim against cool 5600K ambient sky, single frame from a film — shallow depth of field with the rooftop railings falling off softly into blur, warm key against cool shadow pools, fine 35mm film grain with an organic warm texture, subtle anamorphic-style horizontal flare streaking off the rim light, faint halation bleeding around the sun's edge.
+
+카메라·렌즈·심도·앵글: low-angle medium shot, 인물이 프레임 하단 2/3를 압도하도록 배치, lens character: oval anamorphic bokeh, compressed telephoto perspective flattening the city skyline behind her.
+
+배경 요소: 뭉개진 도심 스카이라인 실루엣, 전선과 안테나가 가는 선으로만 남아 노을 색과 겹친다. 옥상 바닥에는 낡은 스피커 케이블 한 가닥이 놓여 있다.
+
+AR 9:16

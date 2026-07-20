@@ -149,7 +149,7 @@ f/16 hyperfocal landscape, foreground to infinity sharp
 ```
 white balance set to 3200K tungsten, blue cast on daylit street
 mixed lighting: 5600K HMI key + 3200K practical lamps in background
-warm 2700K incandescent ambient, no correction
+warm 2700K incandescent ambient, white balance left uncorrected to preserve the warm cast
 ```
 
 ---

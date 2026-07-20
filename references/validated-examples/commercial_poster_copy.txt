@@ -1,0 +1,22 @@
+# 용도: 한글 카피 렌더 포스터 — 겨울밤 골목시장 프로모션 (존/역할 라벨 문법 + Tier-1 동결 문장)
+# 레인: commercial
+# 사이즈: 2048x2048 (텍스트 블록 4개, AR 1:1), quality high
+# 검증: 자가점검 9항 통과 — 롤 라벨 4종 분리·존 좌표 명시 / 렌더 문자열 전부 한글 단일 스크립트 / Tier-1 결합 문장 AR 직전 정확히 1회
+
+Scene: 좁은 골목 야시장의 밤 풍경, 포장마차 천막 아래로 노란 알전구가 줄지어 걸려 있고 김이 피어오르는 어묵 국물 냄비 하나가 화면 하단 2/3 중앙을 차지한다. 골목 바닥은 젖어 알전구 빛을 반사한다.
+
+Camera: 15도 정도 내려다보는 하이앵글, 카메라-피사체 거리 약 2m, deep focus로 배경 천막 줄까지 선명하게 살아 있다.
+
+Lighting: 알전구 다발이 만드는 다중 실용광원, warm 2800K key light, camera-right 골목 안쪽에서 스며드는 cool 6000K 잔광이 대비를 만든다. key:fill 1:2, 냄비 위 김이 빛을 받아 부드럽게 번진다.
+
+Color grading: 팔레트 #1B1A24 #E8A33D #7A2E2E #F2E8D5 #2E3B2E, 알전구의 웜톤과 밤하늘의 딥네이비가 보색으로 대비된다.
+
+Text-in-image:
+headline "겨울밤 골목시장" dominant, roughly one-third of canvas width, centered in the title band occupying the top third, generous negative space around the headline, bold Korean brush-influenced sans-serif, #F2E8D5 on #7A2E2E;
+subhead "매주 금요일과 토요일 저녁 6시" at half the headline size, directly below, same alignment, light geometric sans-serif Korean font, #E8A33D;
+caption "12월 5일부터 12월 27일까지" in the bottom caption band, left-aligned ragged-right, clear margin of ~5% on all edges, thin Korean sans-serif, #F2E8D5;
+badge "무료입장" as a compact pill-shaped badge in the top-right corner, white text on #7A2E2E fill.
+render the Hangul characters exactly as given.
+All text appears once, perfectly legible — no duplicate text, no extra words, no invented glyphs, no watermark.
+
+AR 1:1

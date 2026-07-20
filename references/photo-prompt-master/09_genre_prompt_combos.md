@@ -130,7 +130,7 @@ silver gelatin print on fiber paper, 4:5 ratio
 ```
 shot on Fujifilm GFX100 II, 110mm f/2 wide open, 
 high-key butterfly lighting, octabox 150cm front, 
-absolute clinical sharpness, no skin retouch, 
+absolute clinical sharpness, natural unretouched skin texture with visible pores,
 Düsseldorf typology deadpan, white seamless, 4:5 ratio
 ```
 

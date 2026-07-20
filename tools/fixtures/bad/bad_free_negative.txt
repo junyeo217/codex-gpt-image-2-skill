@@ -1,0 +1,9 @@
+# category: cinematic_still
+# size: 1536x1024
+
+Scene: a lone figure walking through a foggy street at dusk, no crowd, no clutter, without any harsh shadow, avoid blurry background.
+Camera: eye-level medium shot, shallow depth of field.
+Lighting: soft window light from camera left, key:fill 1:2.
+Color grading: 팔레트 #1C1A17 #E9E2D4 #C9642B.
+Negative: low quality, watermark, blurry face
+AR 3:4

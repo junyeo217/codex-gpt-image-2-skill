@@ -1,0 +1,20 @@
+# 용도: 드라마 씬 스틸 — 배신을 실감하는 감정 리액션 컷 (로우키, 8슬롯 구조)
+# 레인: drama
+# 사이즈: AR 4:5 (1024x1536), quality medium
+# 검증: 자가점검 9항 통과 — Tier-0 전부 긍정 재서술·HEX 5색 명시 / 텍스트 없음(Tier-1 미부착) / 브래킷·Negative 라벨 없음
+
+30대 초반 한국 여성 강력반 형사, 각진 턱선에 짙은 쌍꺼풀과 짙은 브라운 홍채, 오른쪽 눈썹 위에 가늘고 옅은 흉터가 하나 있다. 정지된 자세로 테이블 위에 놓인 서류 뭉치를 오른손으로 움켜쥐고 있고, 왼손은 테이블 모서리를 짚어 몸을 지탱한 채 고정돼 있다. 시선은 서류의 한 문장에 고정된 채 아래로 떨어져 있고, 입술은 살짝 다물려 아랫입술 안쪽을 가볍게 물고 있다 — 숨을 참은 순간의 정지.
+
+의상: 짙은 네이비 트렌치코트 #1B2430, 어깨와 옷깃이 비에 젖어 짙게 얼룩져 있다. 안에는 크림색 셔츠 #E8E2D6의 목선만 살짝 드러난다.
+
+헤어·메이크업: 다크브라운 단발, 오른쪽 관자놀이 쪽 잔머리 몇 가닥이 이마에 붙어 있다. natural skin texture, visible pores, a faint sheen of sweat along the hairline, matte base makeup only.
+
+조명: single hard practical source from a desk lamp positioned camera-left, key:fill 1:3, a sharp shadow edge cutting diagonally across the right side of her face — the lit side reveals every micro-expression, the shadow side stays unreadable.
+
+질감·색감 무드: 팔레트 #1B2430 #E8E2D6 #6B5A4C #0D0D0D #8C7B6B, cool 5600K ambient fill against the warm 3200K practical key, visible 35mm film grain, muted desaturated midtones.
+
+카메라·렌즈·심도·앵글: eye-level shot tilted a fraction toward high angle, close-up on the face and the clenched hand, lens character: compressed telephoto perspective with the background falling off into soft creamy blur.
+
+배경 요소: 사무실 캐비닛의 실루엣과 창문 블라인드 사이로 새어드는 가로등 불빛만 형체를 겨우 유지한 채 뭉개진 배경.
+
+AR 4:5

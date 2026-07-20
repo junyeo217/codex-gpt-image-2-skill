@@ -4,7 +4,7 @@
 # dependencies = []
 # ///
 # ─── How to run ───
-# uv run tools/validate_corpus_coverage.py --corpus /path/to/data --coverage references/corpus-coverage.json
+# uv run tools/validate_corpus_coverage.py --corpus /path/to/data --coverage references/local/corpus-coverage.json
 """Verify that a coverage manifest exactly represents a local source tree."""
 
 from __future__ import annotations
