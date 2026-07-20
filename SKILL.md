@@ -49,6 +49,8 @@ Keep slots short, concrete, and non-overlapping. The PDF experiments show qualit
 
 For infographics, translation-in-image, natural photoreal, logos, ads, comics, UI mockups, scientific visuals, slides, diagrams, charts, style transfer, virtual try-on, drawing-to-image, product mockups, real-text marketing creatives, lighting/weather edits, object removal, person insertion, multi-image compositing, interior swaps, collectibles, and children's book art, read `references/prompt-frameworks.md`.
 
+For Korean deliverables, broad category exploration, typography posters, dense diagrams, slides/decks, structured prompt records, provider-neutral production process, or asset-manifest QA, read `references/corpus-router.md` before drafting. It routes the full local prompt corpus without copying raw collections into the published skill. Use one primary source family, preserve source-record metadata when supplied, and rebuild the final result in the slot stack.
+
 ## Photography reference
 
 For photorealistic, cinematic, editorial, documentary, fashion, product, travel, architecture, food, sports, or street-photography prompts, use the photo prompt master reference in `references/photo-prompt-master/`.
@@ -86,6 +88,7 @@ Read as needed:
 - `references/photo-prompt-master/00_index.md` for detailed photographic vocabulary and genre-specific combinations.
 - `references/api-and-codex-routes.md` only when the user explicitly asks about API, Codex CLI, OAuth-wrapper, or plugin implementation notes.
 - `references/source-notes.md` for distilled notes from the PDF, Notion page, GitHub repos, Soylab guide, and official docs.
+- `references/corpus-router.md` when a request needs the complete local corpus's Korean category libraries, large JSON datasets, typography/diagram patterns, structured records, provider-neutral workflow lessons, or production manifests.
 
 ## Helper script
 
@@ -94,4 +97,6 @@ Use `scripts/compose_prompt.py` to build a structured prompt or validate GPT Ima
 ```bash
 python scripts/compose_prompt.py compose --brief "cinematic poster of a red umbrella in rainy Seoul"
 python scripts/compose_prompt.py check-size --size 1536x1024
+python scripts/compose_prompt.py compose-record --input /path/to/prompts.jsonl --id RECORD-ID
+python scripts/compose_prompt.py validate-record --input /path/to/prompts.jsonl --id RECORD-ID
 ```

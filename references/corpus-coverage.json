@@ -1,0 +1,1113 @@
+{
+  "schema_version": 1,
+  "source_root": "/Users/wndvkf0217/video_project/DATA/data",
+  "file_count": 158,
+  "files": [
+    {
+      "path": "ai-image-prompts-skill-main/README.md",
+      "bytes": 5400,
+      "lines": 158,
+      "sha256": "f9af5cbcc4b63e834f22f623898304a2e293a6f5e8e4bc6e4fd27edb8857b270",
+      "records": null
+    },
+    {
+      "path": "ai-image-prompts-skill-main/SKILL.md",
+      "bytes": 17415,
+      "lines": 426,
+      "sha256": "81447747ad76f8f3f8ec291aeb0de59a518b35efd77eaa302ad63107ac5ee580",
+      "records": null
+    },
+    {
+      "path": "ai-image-prompts-skill-main/references/app-web-design.json",
+      "bytes": 335512,
+      "lines": 2440,
+      "sha256": "9d202e5ad4ab9bd444f6a5eafbdf7bfaf55258b98cee6a5caa40b79c66cb3cbe",
+      "records": 224
+    },
+    {
+      "path": "ai-image-prompts-skill-main/references/comic-storyboard.json",
+      "bytes": 864378,
+      "lines": 6496,
+      "sha256": "639496a665dff327b99332c09e84fa839379369a7dd8c98ed79593f02a3db312",
+      "records": 614
+    },
+    {
+      "path": "ai-image-prompts-skill-main/references/ecommerce-main-image.json",
+      "bytes": 1045314,
+      "lines": 6194,
+      "sha256": "fb909b77d747245e5e0a8d98181663816e9b1499cc37fbca25475669af24b86e",
+      "records": 552
+    },
+    {
+      "path": "ai-image-prompts-skill-main/references/game-asset.json",
+      "bytes": 1016320,
+      "lines": 7239,
+      "sha256": "795d77a1273802f5755d684b13c9bb2e60076f0ba4107936dadc91cd72192886",
+      "records": 671
+    },
+    {
+      "path": "ai-image-prompts-skill-main/references/infographic-edu-visual.json",
+      "bytes": 883325,
+      "lines": 6313,
+      "sha256": "762a5f656c861cd107cf043cb219d1443fee47dfbdd133c615aeed7cf7f2fb67",
+      "records": 586
+    },
+    {
+      "path": "ai-image-prompts-skill-main/references/others.json",
+      "bytes": 1221632,
+      "lines": 11535,
+      "sha256": "f8fe624a77fb137418848af1568ed8960204f003acbc24b93a6ace0eb02f3598",
+      "records": 1081
+    },
+    {
+      "path": "ai-image-prompts-skill-main/references/poster-flyer.json",
+      "bytes": 1628012,
+      "lines": 9577,
+      "sha256": "5e0c2cf6a6132ab942e40f5678daaf0c6154f6c789bb349ff4ef5e169100f70f",
+      "records": 903
+    },
+    {
+      "path": "ai-image-prompts-skill-main/references/youtube-thumbnail.json",
+      "bytes": 358771,
+      "lines": 2307,
+      "sha256": "29b6dc051b10a43a121f0ee07678113dd40b31eedc3979b64011001417842284",
+      "records": 215
+    },
+    {
+      "path": "codex-gpt-image-2/photo-prompt-master/01_camera_lens_exposure.md",
+      "bytes": 7755,
+      "lines": 207,
+      "sha256": "19af586a7704d2f718287fe0933eb2357ac9fad535ed72ca8f3988ee4883ed3e",
+      "records": null
+    },
+    {
+      "path": "codex-gpt-image-2/photo-prompt-master/02_light.md",
+      "bytes": 3465,
+      "lines": 103,
+      "sha256": "f8bb3ba785f012c4fd47fdb2e62c6680114a2d3c6284828e0d66c7f655fd0802",
+      "records": null
+    },
+    {
+      "path": "codex-gpt-image-2/photo-prompt-master/03_composition.md",
+      "bytes": 3415,
+      "lines": 127,
+      "sha256": "8fa73f174590e2f2cdd9c6c808a9b897f06131955e0ddb4bab8707166ec898b1",
+      "records": null
+    },
+    {
+      "path": "codex-gpt-image-2/photo-prompt-master/04_color.md",
+      "bytes": 2058,
+      "lines": 83,
+      "sha256": "88bb6b1133bfb68fb20852f240e43d536bfcaf22116e594d5770319938104233",
+      "records": null
+    },
+    {
+      "path": "codex-gpt-image-2/photo-prompt-master/05_mood_postprocessing.md",
+      "bytes": 3572,
+      "lines": 125,
+      "sha256": "f47d328d9c5c9daffebc8be9d0110d4e65ebf3de938f3c3a3e3eeccae3927fbf",
+      "records": null
+    },
+    {
+      "path": "codex-gpt-image-2/photo-prompt-master/06_genre_art_history.md",
+      "bytes": 3567,
+      "lines": 137,
+      "sha256": "f1aac9315291f2b4d42ab85ff76ebbe95679acda4fca96ae270321483833d72b",
+      "records": null
+    },
+    {
+      "path": "codex-gpt-image-2/photo-prompt-master/07_subject_direction_environment.md",
+      "bytes": 2374,
+      "lines": 114,
+      "sha256": "117f0ad05d2a4404f84e99dc0049cb009e932fe8a363cc71149a0f9361f57e60",
+      "records": null
+    },
+    {
+      "path": "codex-gpt-image-2/photo-prompt-master/08_time_weather_mood.md",
+      "bytes": 1273,
+      "lines": 66,
+      "sha256": "44201660c7f3fb365a6ffba2877b1270c146aad88b594b03bb2d87d7c8cf4949",
+      "records": null
+    },
+    {
+      "path": "codex-gpt-image-2/photo-prompt-master/09_genre_prompt_combos.md",
+      "bytes": 4794,
+      "lines": 163,
+      "sha256": "c20e5a63918a93d292f1e173c15ac318ffd36bde756ae385a9403c4f2c62b7c7",
+      "records": null
+    },
+    {
+      "path": "codex-gpt-image-2/photo-prompt-master/10a_real_world_basic.md",
+      "bytes": 11433,
+      "lines": 341,
+      "sha256": "e7996ea593e42b95fc4390e9d694955d4ac6077d93589bfdaf21e4fa4a08e979",
+      "records": null
+    },
+    {
+      "path": "codex-gpt-image-2/photo-prompt-master/10b_real_world_advanced.md",
+      "bytes": 5212,
+      "lines": 225,
+      "sha256": "492d5c9e7b3a4d6bf3afcb4fd61769537b53cb169861338bef6b8a223a4c89eb",
+      "records": null
+    },
+    {
+      "path": "codex-gpt-image-2/photo-prompt-master/11_master_tips.md",
+      "bytes": 2194,
+      "lines": 56,
+      "sha256": "c5dc98134aad3462360f99a036dd866b0bf313008025f35f735f56cebae61e56",
+      "records": null
+    },
+    {
+      "path": "codex-gpt-image-2/prompt-frameworks.md",
+      "bytes": 8263,
+      "lines": 136,
+      "sha256": "4dbd9f5eb8c91ace8ce1addf07b11b1c5f6b5dc03fc16205b8fbda73c705ea40",
+      "records": null
+    },
+    {
+      "path": "generative-media-skills-main/skills/production/content-formats/ecommerce-product-imagery/EVAL.md",
+      "bytes": 14660,
+      "lines": 323,
+      "sha256": "d3be95bdb2e5789f2e80fe7d4826c23b4b3b7edc1eb2d350630e10b50f054ac9",
+      "records": null
+    },
+    {
+      "path": "generative-media-skills-main/skills/production/content-formats/ecommerce-product-imagery/SKILL.md",
+      "bytes": 28027,
+      "lines": 461,
+      "sha256": "c3e8e9b885c510a9a6e4aa321c3ff22432330d85dae8a89ffd125908965948c6",
+      "records": null
+    },
+    {
+      "path": "generative-media-skills-main/skills/production/post-production/still-image-retouching-finishing/EVAL.md",
+      "bytes": 13926,
+      "lines": 291,
+      "sha256": "11709ac6a7d532f41fffdf32e81db64946145be6068e118173f2291eb296510a",
+      "records": null
+    },
+    {
+      "path": "generative-media-skills-main/skills/production/post-production/still-image-retouching-finishing/SKILL.md",
+      "bytes": 36258,
+      "lines": 404,
+      "sha256": "eb609ddab365f85a4fb3bd2c7baa8c2c7c607d64da4f84f784ecb7ec9f76980b",
+      "records": null
+    },
+    {
+      "path": "generative-media-skills-main/skills/providers/image-generation/adobe-firefly-image/EVAL.md",
+      "bytes": 18654,
+      "lines": 250,
+      "sha256": "dc962e4c56f1ea032cb799776dcd3c436b586658b6e46418bcd1fb77e2eacafc",
+      "records": null
+    },
+    {
+      "path": "generative-media-skills-main/skills/providers/image-generation/adobe-firefly-image/SKILL.md",
+      "bytes": 42179,
+      "lines": 607,
+      "sha256": "801d7fc2022238a2adbc2072e3d14bb977567d847bb465830f5911945726eb19",
+      "records": null
+    },
+    {
+      "path": "generative-media-skills-main/skills/providers/image-generation/alibaba-image-models/EVAL.md",
+      "bytes": 9449,
+      "lines": 106,
+      "sha256": "50073006a6380206380d8c9a638dd75a52b457d778760ee3dce97d72e6d5ca22",
+      "records": null
+    },
+    {
+      "path": "generative-media-skills-main/skills/providers/image-generation/alibaba-image-models/SKILL.md",
+      "bytes": 28864,
+      "lines": 375,
+      "sha256": "0f93442919099bba171ca67f282d1a9d1a10f9615726ac290386cef70475bce2",
+      "records": null
+    },
+    {
+      "path": "generative-media-skills-main/skills/providers/image-generation/amazon-nova-canvas/SKILL.md",
+      "bytes": 34397,
+      "lines": 592,
+      "sha256": "94a11a2ab9d1425cc57c74685c87d642d3db987a586076a43f6cdd1c1c5b25ac",
+      "records": null
+    },
+    {
+      "path": "generative-media-skills-main/skills/providers/image-generation/black-forest-labs-flux/EVAL.md",
+      "bytes": 17562,
+      "lines": 237,
+      "sha256": "845995407ca6410510167214a24a896317294e05296bd249af2480523629073f",
+      "records": null
+    },
+    {
+      "path": "generative-media-skills-main/skills/providers/image-generation/black-forest-labs-flux/SKILL.md",
+      "bytes": 31757,
+      "lines": 355,
+      "sha256": "d60dea1e0c5a1d2c84eaafd797b4d89b5157780277da7c3b3a3ac05cbade7e19",
+      "records": null
+    },
+    {
+      "path": "generative-media-skills-main/skills/providers/image-generation/bria-fibo-image/EVAL.md",
+      "bytes": 15696,
+      "lines": 126,
+      "sha256": "4ca01b6b73084375ca590ea061b2fe56b877b5f0d888725314d9dc8ac6106677",
+      "records": null
+    },
+    {
+      "path": "generative-media-skills-main/skills/providers/image-generation/bria-fibo-image/SKILL.md",
+      "bytes": 47854,
+      "lines": 835,
+      "sha256": "13b26061f6f78d0d19b31aa7ff473c10cf381fd31dea881555601e56391b156e",
+      "records": null
+    },
+    {
+      "path": "generative-media-skills-main/skills/providers/image-generation/bytedance-seedream/EVAL.md",
+      "bytes": 7602,
+      "lines": 67,
+      "sha256": "b550de3c1bac04c3b4d74958884b69d283fd275e823258ebc7fa792d187ad029",
+      "records": null
+    },
+    {
+      "path": "generative-media-skills-main/skills/providers/image-generation/bytedance-seedream/SKILL.md",
+      "bytes": 36503,
+      "lines": 662,
+      "sha256": "32f0c4234f30bb7322620b63b9b1cdcb31221161f969d01bbfde3cf70f29c1d3",
+      "records": null
+    },
+    {
+      "path": "generative-media-skills-main/skills/providers/image-generation/google-gemini-image/EVAL.md",
+      "bytes": 20676,
+      "lines": 347,
+      "sha256": "52bc899121f0f0b99c9526fa32aa84884d69f0ae94733cc10d9d5969eec9a922",
+      "records": null
+    },
+    {
+      "path": "generative-media-skills-main/skills/providers/image-generation/google-gemini-image/SKILL.md",
+      "bytes": 37817,
+      "lines": 514,
+      "sha256": "339e31e51950479fc1be3be5f7267c011d15f7c279bdb75659d843b76967ea87",
+      "records": null
+    },
+    {
+      "path": "generative-media-skills-main/skills/providers/image-generation/image-generation-gateways/EVAL.md",
+      "bytes": 18482,
+      "lines": 132,
+      "sha256": "52f172d064bbf45a14b7e57e9c791e8dd404fa9361421d58590f20427bb4ad83",
+      "records": null
+    },
+    {
+      "path": "generative-media-skills-main/skills/providers/image-generation/image-generation-gateways/SKILL.md",
+      "bytes": 80155,
+      "lines": 1653,
+      "sha256": "f14f473946120e66d08096edef53fca5dae6cb8edff976016f3dfe822e73cb6d",
+      "records": null
+    },
+    {
+      "path": "generative-media-skills-main/skills/providers/image-generation/kling-kolors-image/EVAL.md",
+      "bytes": 13471,
+      "lines": 116,
+      "sha256": "3a85c4c4817cd1bbe84f383988699c06c682790a6c3ea56118c039d71ae4091d",
+      "records": null
+    },
+    {
+      "path": "generative-media-skills-main/skills/providers/image-generation/kling-kolors-image/SKILL.md",
+      "bytes": 55361,
+      "lines": 781,
+      "sha256": "8112ec311eb00527e9626ead8e60523e4daad7f0887f08787518786de7e8406e",
+      "records": null
+    },
+    {
+      "path": "generative-media-skills-main/skills/providers/image-generation/leonardo-image/EVAL.md",
+      "bytes": 12784,
+      "lines": 121,
+      "sha256": "055ebb72c982a29f16550f7c5fd6435bf640b5ce61a551a9546e5ba09532e25f",
+      "records": null
+    },
+    {
+      "path": "generative-media-skills-main/skills/providers/image-generation/leonardo-image/SKILL.md",
+      "bytes": 44899,
+      "lines": 651,
+      "sha256": "50eefa89f869ced0cb375dd8e12a76e11e826a202d3b2eeedd46cb52947cd907",
+      "records": null
+    },
+    {
+      "path": "generative-media-skills-main/skills/providers/image-generation/luma-photon/EVAL.md",
+      "bytes": 11993,
+      "lines": 114,
+      "sha256": "c37e56f4c827f7dc88be0cb6ed406a5de38608aac43b54f5aac9c576bddbc377",
+      "records": null
+    },
+    {
+      "path": "generative-media-skills-main/skills/providers/image-generation/luma-photon/SKILL.md",
+      "bytes": 43338,
+      "lines": 756,
+      "sha256": "11e91b8a82a1de20792da7728f83b799752cbe313cd3fa44aac676b23bdfe9df",
+      "records": null
+    },
+    {
+      "path": "generative-media-skills-main/skills/providers/image-generation/midjourney-image/EVAL.md",
+      "bytes": 18180,
+      "lines": 196,
+      "sha256": "e0ea83c690e519e82b2a032b5b660ec06671993c5e07ea37fd212b28e25b62d7",
+      "records": null
+    },
+    {
+      "path": "generative-media-skills-main/skills/providers/image-generation/midjourney-image/SKILL.md",
+      "bytes": 42972,
+      "lines": 457,
+      "sha256": "cd8da84a079f2b8df1f40625832d9a7f2857619f6079d419e581ffaea4ffd19a",
+      "records": null
+    },
+    {
+      "path": "generative-media-skills-main/skills/providers/image-generation/openai-gpt-image/EVAL.md",
+      "bytes": 13676,
+      "lines": 238,
+      "sha256": "d79498149dad161456d6767380c16766e3b8bfe3481f766f0cc4e4b6f5b34924",
+      "records": null
+    },
+    {
+      "path": "generative-media-skills-main/skills/providers/image-generation/openai-gpt-image/SKILL.md",
+      "bytes": 33323,
+      "lines": 511,
+      "sha256": "eb20db5862de920c9ba1b78ad0e7fdb0cf1d34ba64a0391b0e323863bfcf46d1",
+      "records": null
+    },
+    {
+      "path": "generative-media-skills-main/skills/providers/image-generation/recraft-image-design/EVAL.md",
+      "bytes": 13009,
+      "lines": 187,
+      "sha256": "43bcc700dbc9448c8064e44cb2f6fa3732599ca29720e9bdc6d9ccf422dbc794",
+      "records": null
+    },
+    {
+      "path": "generative-media-skills-main/skills/providers/image-generation/recraft-image-design/SKILL.md",
+      "bytes": 42762,
+      "lines": 656,
+      "sha256": "3fef0d4687116c86100900d47c30ba83ccf9c8b0a54815cfe2761ed191f5c73c",
+      "records": null
+    },
+    {
+      "path": "generative-media-skills-main/skills/providers/image-generation/runway-image/EVAL.md",
+      "bytes": 11326,
+      "lines": 122,
+      "sha256": "2d31eff8b53966a7cf171f780df12f5303492f7f00b3f0befaf0640d1ae8a339",
+      "records": null
+    },
+    {
+      "path": "generative-media-skills-main/skills/providers/image-generation/runway-image/SKILL.md",
+      "bytes": 32901,
+      "lines": 531,
+      "sha256": "5bca3dbff7f19515e85e38f576e708fcbadb9fbc3d72709bb8d10ee7ada953bc",
+      "records": null
+    },
+    {
+      "path": "generative-media-skills-main/skills/providers/image-generation/stability-ai-image/SKILL.md",
+      "bytes": 35753,
+      "lines": 498,
+      "sha256": "b463407e23a766f7e5ae7ddd57bd15c78e35c5713f553a6edc7d34f730a80f9a",
+      "records": null
+    },
+    {
+      "path": "generative-media-skills-main/skills/providers/image-generation/xai-grok-imagine-image/EVAL.md",
+      "bytes": 9733,
+      "lines": 113,
+      "sha256": "3e2ef4f5da3391b8dca78126c506fe9934696a7d321871f76be8fe2243b102b2",
+      "records": null
+    },
+    {
+      "path": "generative-media-skills-main/skills/providers/image-generation/xai-grok-imagine-image/SKILL.md",
+      "bytes": 39898,
+      "lines": 700,
+      "sha256": "d17047e69a345f92e23a6e0b404fb4595f7e41459cc02e576959d626f88c4c8c",
+      "records": null
+    },
+    {
+      "path": "generative-media-skills-main/skills/providers/image-understanding/amazon-rekognition/SKILL.md",
+      "bytes": 32033,
+      "lines": 391,
+      "sha256": "a3a8883e7cb8a7026d4b0b8a5bbd9300aa709739997799a81eca36f71e472948",
+      "records": null
+    },
+    {
+      "path": "generative-media-skills-main/skills/providers/image-understanding/google-cloud-vision/EVAL.md",
+      "bytes": 15859,
+      "lines": 308,
+      "sha256": "291b7604f986c28a579cbf6e850344536f2262e8d798d8a3596460a1f63eda2b",
+      "records": null
+    },
+    {
+      "path": "generative-media-skills-main/skills/providers/image-understanding/google-cloud-vision/SKILL.md",
+      "bytes": 28486,
+      "lines": 335,
+      "sha256": "6e9b4e464156bf10baf97a0f081a18fee33957629498e8f1edd314f65a76c4da",
+      "records": null
+    },
+    {
+      "path": "gongnyang-prompt-kit/examples/diagram-gallery/complex-16x9/prompts-complex.jsonl",
+      "bytes": 21002,
+      "lines": 11,
+      "sha256": "b29f0bbc751dc271a62110160079363a3f315bdb53e01610f37ccbd6c3db9582",
+      "records": 10
+    },
+    {
+      "path": "gongnyang-prompt-kit/examples/diagram-gallery/deck-21x9/prompts-deck.jsonl",
+      "bytes": 20409,
+      "lines": 11,
+      "sha256": "0a5b03fc84323401252ed1994b1f67a1f031a4af59cfd2eea630f281dc02d7dd",
+      "records": 10
+    },
+    {
+      "path": "gongnyang-prompt-kit/examples/diagram-gallery/dense-16x9/prompts-dense.jsonl",
+      "bytes": 30091,
+      "lines": 11,
+      "sha256": "c8383724397ec7f44b7290c050f68a302be1d720b83d28ad4487e121a4f242fa",
+      "records": 10
+    },
+    {
+      "path": "gongnyang-prompt-kit/examples/diagram-gallery/infographic/prompts.jsonl",
+      "bytes": 18959,
+      "lines": 11,
+      "sha256": "1fa9de229dc3f32a390604474f938d95513b534cb8de885670f89be201a127b5",
+      "records": 10
+    },
+    {
+      "path": "gongnyang-prompt-kit/examples/hwabo_formatB.txt",
+      "bytes": 741,
+      "lines": 2,
+      "sha256": "7b439f5adc87bf684ef19eb23be7222fb9e3a1e7216481368b45be4b94157493",
+      "records": null
+    },
+    {
+      "path": "gongnyang-prompt-kit/examples/keyart_16x9.txt",
+      "bytes": 763,
+      "lines": 8,
+      "sha256": "1dc8e28467b987c713718b2e92e98a2a95ad1bc933ecb47e8647ff55800377d0",
+      "records": null
+    },
+    {
+      "path": "gongnyang-prompt-kit/examples/poster.txt",
+      "bytes": 752,
+      "lines": 9,
+      "sha256": "62e8e37e715ed2681e1a188e87c6a76e905212fe889a7246594bfb633b2acd50",
+      "records": null
+    },
+    {
+      "path": "gongnyang-prompt-kit/examples/prompts.sample.jsonl",
+      "bytes": 3178,
+      "lines": 4,
+      "sha256": "9832d8d4943d8229b660383059c02ed6f86add02734ada93496054bde75dd8c7",
+      "records": 3
+    },
+    {
+      "path": "gongnyang-prompt-kit/examples/showcase.jsonl",
+      "bytes": 34108,
+      "lines": 32,
+      "sha256": "e9243dc89022afc2e3bff8a6908b2d6b516e55c1376e2482cd72689532caa89a",
+      "records": 31
+    },
+    {
+      "path": "gongnyang-prompt-kit/examples/typo-poster.jsonl",
+      "bytes": 35151,
+      "lines": 29,
+      "sha256": "112b2ec68c9381284c46d1e968fef7db344ff35340320e826cc9cf752aba8723",
+      "records": 28
+    },
+    {
+      "path": "gongnyang-prompt-kit/examples/typography_card.txt",
+      "bytes": 949,
+      "lines": 9,
+      "sha256": "6955d1a0f4bd9c280b5f1e64e805e578044c661c61af886b1f646b5faa089316",
+      "records": null
+    },
+    {
+      "path": "gongnyang-prompt-kit/references/category-patterns.md",
+      "bytes": 17478,
+      "lines": 119,
+      "sha256": "dd2eb774dec3a0882d418383a6232cec40513eb2517f09aea7b0d72bad68a6d0",
+      "records": null
+    },
+    {
+      "path": "gongnyang-prompt-kit/references/concept-axes.md",
+      "bytes": 18658,
+      "lines": 210,
+      "sha256": "cd81941d8d36d64c41fa1461f3b258ddaeb61ac3205f6b8478e1cf05b6b3a96b",
+      "records": null
+    },
+    {
+      "path": "gongnyang-prompt-kit/references/editorial-hwabo.md",
+      "bytes": 13679,
+      "lines": 165,
+      "sha256": "18bf9997c4850e80ef38110ad69674d4fb4913c222f688af9477f2ffc5cdae06",
+      "records": null
+    },
+    {
+      "path": "gongnyang-prompt-kit/references/look-presets.md",
+      "bytes": 6488,
+      "lines": 72,
+      "sha256": "cbd7a5e4229cb997f3dcc94df8060ab800dc4d40dfa5041777c0dd21eb06eacd",
+      "records": null
+    },
+    {
+      "path": "gongnyang-prompt-kit/references/photo-vocab.md",
+      "bytes": 5475,
+      "lines": 63,
+      "sha256": "e5af55243e681c899fa31488a6a52020ed900b5b1bca985a8831cea22e3ce92d",
+      "records": null
+    },
+    {
+      "path": "gongnyang-prompt-kit/references/promo/P1-typomask.md",
+      "bytes": 1151,
+      "lines": 8,
+      "sha256": "9ff9105dd9798afc8824e29fb9e5c959dd8132f183325a94f0bdbd90782733bf",
+      "records": null
+    },
+    {
+      "path": "gongnyang-prompt-kit/references/promo/P2-typo-env.md",
+      "bytes": 1817,
+      "lines": 10,
+      "sha256": "60680088e704159db418ac87763d7ef240c3accabb6ea9ff6274f8146636fb13",
+      "records": null
+    },
+    {
+      "path": "gongnyang-prompt-kit/references/promo/P3-crop-occlusion.md",
+      "bytes": 1856,
+      "lines": 9,
+      "sha256": "e9e0b53e8b2fbc6d35c4a2d881208baa99f498fbafd0416f8559cbae6ebb42a2",
+      "records": null
+    },
+    {
+      "path": "gongnyang-prompt-kit/references/promo/P4-color-campaign.md",
+      "bytes": 1729,
+      "lines": 10,
+      "sha256": "65758864fd0119f2689fe54e10c002f7055139a41c92957ab075f8c9e079004c",
+      "records": null
+    },
+    {
+      "path": "gongnyang-prompt-kit/references/promo/P5-meta-ui.md",
+      "bytes": 1799,
+      "lines": 10,
+      "sha256": "72b70f05d8a010188c3eaab320d35153978f8a32af550fe4883ffd2723c483c0",
+      "records": null
+    },
+    {
+      "path": "gongnyang-prompt-kit/references/promo/P6-street-collage.md",
+      "bytes": 1605,
+      "lines": 8,
+      "sha256": "93122f8023ebe3eebe79aeba4b71e32a53924d6c6729fd47760393114ca2689f",
+      "records": null
+    },
+    {
+      "path": "gongnyang-prompt-kit/references/promo/P7-editorial-rotate.md",
+      "bytes": 1335,
+      "lines": 8,
+      "sha256": "9d5ef52a548d74c0e107148b5ad95b93d6999fb10a3f6fba524c01c6798afbe3",
+      "records": null
+    },
+    {
+      "path": "gongnyang-prompt-kit/references/promo/P8-mono-staging.md",
+      "bytes": 1352,
+      "lines": 8,
+      "sha256": "7004dbf7125333e43d4e4920de859ac0ffb30a1220cd19d27bcaae8c7cf63f13",
+      "records": null
+    },
+    {
+      "path": "gongnyang-prompt-kit/references/promo-router.md",
+      "bytes": 4579,
+      "lines": 47,
+      "sha256": "3ae643c77cc4b50493217ef2d0cf1269fec92f028135d0163610473f24aed977",
+      "records": null
+    },
+    {
+      "path": "gongnyang-prompt-kit/references/style-taxonomy.md",
+      "bytes": 4831,
+      "lines": 51,
+      "sha256": "700968bed002554f844d37271c6409488b5a3730fa418b75c4d6b392a898093e",
+      "records": null
+    },
+    {
+      "path": "gongnyang-prompt-kit/references/typo-poster/TP1-photo-mask.md",
+      "bytes": 2443,
+      "lines": 24,
+      "sha256": "5bf2bcf6fde96fafd4cbdd3ec9a7be9d174c948973d009ee38ec06fec53a8172",
+      "records": null
+    },
+    {
+      "path": "gongnyang-prompt-kit/references/typo-poster/TP10-opart-pattern.md",
+      "bytes": 2524,
+      "lines": 25,
+      "sha256": "6c91c165d16297a0965ef9b82bc442ccc711d62f45c280cb9f04e696a9577e3a",
+      "records": null
+    },
+    {
+      "path": "gongnyang-prompt-kit/references/typo-poster/TP11-acid-graphics.md",
+      "bytes": 2768,
+      "lines": 25,
+      "sha256": "6f8f309bd29cbc3a35bc52e82b0f3fc10e6a8c40aa12598b4f3421e96557142a",
+      "records": null
+    },
+    {
+      "path": "gongnyang-prompt-kit/references/typo-poster/TP12-future-medieval.md",
+      "bytes": 3504,
+      "lines": 21,
+      "sha256": "31afec59d7c17a29613cd5d820c3928a9c97ea89c02dc4f43a9870971b3e80bf",
+      "records": null
+    },
+    {
+      "path": "gongnyang-prompt-kit/references/typo-poster/TP13-anamorphic.md",
+      "bytes": 3258,
+      "lines": 26,
+      "sha256": "da31956a256d3ef60b4fa01125c7d9d2a7cb3837e01ba8babea59a6a16f26312",
+      "records": null
+    },
+    {
+      "path": "gongnyang-prompt-kit/references/typo-poster/TP14-micrography.md",
+      "bytes": 3714,
+      "lines": 27,
+      "sha256": "ecda625b15d20e8f8cff77331b2bc478ea7ce90e42b6cf02b67632dcb59e6abb",
+      "records": null
+    },
+    {
+      "path": "gongnyang-prompt-kit/references/typo-poster/TP2-text-tunnel.md",
+      "bytes": 2478,
+      "lines": 23,
+      "sha256": "f685f8236bf9077906baa4fb5b6a9211b444fcca0cfd93592f70cbafd9ba79c4",
+      "records": null
+    },
+    {
+      "path": "gongnyang-prompt-kit/references/typo-poster/TP3-type-architecture.md",
+      "bytes": 2598,
+      "lines": 25,
+      "sha256": "19bbab1bdb0257ec5302c9d9f986460554821e8b4fc489e7eed2bc26bf1f409a",
+      "records": null
+    },
+    {
+      "path": "gongnyang-prompt-kit/references/typo-poster/TP4-optical-type.md",
+      "bytes": 2913,
+      "lines": 24,
+      "sha256": "8c99202b501d4bbeb2c1fc364084086e09425dc6627dd1b0c080b85c05e16980",
+      "records": null
+    },
+    {
+      "path": "gongnyang-prompt-kit/references/typo-poster/TP5-tactile-destruction.md",
+      "bytes": 2581,
+      "lines": 23,
+      "sha256": "d634496e2df9ca153675cc87fbb6692fa221cd8f613d533194e49f36d73859a5",
+      "records": null
+    },
+    {
+      "path": "gongnyang-prompt-kit/references/typo-poster/TP6-swiss-kinetic.md",
+      "bytes": 2447,
+      "lines": 24,
+      "sha256": "2b49e59c9567b10f1bfc691d5154b588faa55342b62c7ea8833262955b8e6f9b",
+      "records": null
+    },
+    {
+      "path": "gongnyang-prompt-kit/references/typo-poster/TP7-material-sculpt.md",
+      "bytes": 2546,
+      "lines": 24,
+      "sha256": "ead7533c838ae135f6f7dec5792c6d40b618b1281cfee5bdac00e273dfc375b7",
+      "records": null
+    },
+    {
+      "path": "gongnyang-prompt-kit/references/typo-poster/TP8-liquid-chrome.md",
+      "bytes": 2490,
+      "lines": 24,
+      "sha256": "992b505c545c69a8275a694d3dbc6ecd06e750d028769b4f4b33e6bbb1380ec1",
+      "records": null
+    },
+    {
+      "path": "gongnyang-prompt-kit/references/typo-poster/TP9-inflatable.md",
+      "bytes": 2375,
+      "lines": 24,
+      "sha256": "48e726dc66225213c51726f4c408337b9edac558b0cd49e41ed0bfd9b8cfd365",
+      "records": null
+    },
+    {
+      "path": "gongnyang-prompt-kit/references/typo-poster-router.md",
+      "bytes": 5138,
+      "lines": 54,
+      "sha256": "bcc29d7ed58bb9ce9d42c964ccec6b0cf4e265d7817c0d4b405d9a2500474ff3",
+      "records": null
+    },
+    {
+      "path": "gongnyang-prompt-kit/references/typography-layout.md",
+      "bytes": 10725,
+      "lines": 168,
+      "sha256": "7626da031a816592e16639057087eec31ccd9b67e4c5ea6b3f972df65a29abda",
+      "records": null
+    },
+    {
+      "path": "gongnyang-prompt-kit/validated-examples/hwabo_formatB.txt",
+      "bytes": 847,
+      "lines": 2,
+      "sha256": "61009437adff40e15c4610e70da6664792842480a014c52323d38fcc915c974e",
+      "records": null
+    },
+    {
+      "path": "gongnyang-prompt-kit/validated-examples/keyart_cinematic.txt",
+      "bytes": 759,
+      "lines": 8,
+      "sha256": "c5cdf8d8a7c0c84e5dd15517421eacf07b256d4ea9fcb99efb102c8e34c20ca5",
+      "records": null
+    },
+    {
+      "path": "gongnyang-prompt-kit/validated-examples/poster_tier1.txt",
+      "bytes": 807,
+      "lines": 9,
+      "sha256": "6b3c733c5e34d8e33d30e97364ac9e894fc667b9031577b855fb55bf01a0e1df",
+      "records": null
+    },
+    {
+      "path": "gongnyang-prompt-kit/validated-examples/real_hwabo.txt",
+      "bytes": 587,
+      "lines": 2,
+      "sha256": "282136cedfdc1e7ce89ea781648716ef7f26dd93e60b3adc776124f69c215773",
+      "records": null
+    },
+    {
+      "path": "gongnyang-prompt-kit/validated-examples/real_keyart.txt",
+      "bytes": 776,
+      "lines": 8,
+      "sha256": "ce6e61b42c6cf4bb7cc76ce242e788f9672f88d7a981772a867d1710f0a6619f",
+      "records": null
+    },
+    {
+      "path": "gongnyang-prompt-kit/validated-examples/records.jsonl",
+      "bytes": 1867,
+      "lines": 3,
+      "sha256": "949b5e5319d6a31dcff9d563c38a04ceff7761023abe7b8270bffa89b6de1576",
+      "records": 2
+    },
+    {
+      "path": "gongnyang-prompt-kit/validated-examples/typo_poster_material.txt",
+      "bytes": 829,
+      "lines": 10,
+      "sha256": "53399764966f89faa8ae5dea098d4a9a5cd3591e5f43f61bc33c1f1543e0fcb0",
+      "records": null
+    },
+    {
+      "path": "gongnyang-prompt-kit/validated-examples/typo_poster_tunnel.txt",
+      "bytes": 756,
+      "lines": 10,
+      "sha256": "f547cc53854a7b98c37455c3d2af57f88e87c7d46417db6cdb4027942421ad58",
+      "records": null
+    },
+    {
+      "path": "guides/GPT-Image-2 활용 가이드 cde49717d6b48292b3b381469652964f.md",
+      "bytes": 34184,
+      "lines": 679,
+      "sha256": "65585ae7c15ae5f6228d0cac702a5d8033fc067342dca9cf474c59aa4c398a67",
+      "records": null
+    },
+    {
+      "path": "guides/시네마틱 이미지 생성 가이드 59dfca6f81da82379a5f8103a0258293.md",
+      "bytes": 59507,
+      "lines": 732,
+      "sha256": "b474330a7c04f5b46021cd25fb6dd41b4cafced9a057bc2aa3b2ad3ab856950d",
+      "records": null
+    },
+    {
+      "path": "maestro-main/app/defaults/qwen_image_edit_plus2_20B.json",
+      "bytes": 780,
+      "lines": 19,
+      "sha256": "9d8bb288135613f03289d0c0965bac9009a51107948d7496037afccaea200810",
+      "records": 1
+    },
+    {
+      "path": "maestro-main/app/services/llm_guides/QWEN IMAGE EDIT PROMPTING GUIDE.md",
+      "bytes": 8936,
+      "lines": 258,
+      "sha256": "03a599fe2ca904348c85890bdea69c962f767b085211aa3d6dd8e89cbe25841d",
+      "records": null
+    },
+    {
+      "path": "maestro-main/app/services/llm_guides/director/flux_image_edit_pass2.md",
+      "bytes": 7685,
+      "lines": 120,
+      "sha256": "50171d33fa1121d7d367266ac1d0f08cc37230be4191eae17867deef37e0468e",
+      "records": null
+    },
+    {
+      "path": "maestro-main/app/services/llm_guides/director/flux_image_generation.md",
+      "bytes": 3376,
+      "lines": 35,
+      "sha256": "ce4ab34d06c8ed0f08b6bd4d97f7ba7459865b7f7e202b7592beffdb2b6ebc5f",
+      "records": null
+    },
+    {
+      "path": "maestro-main/app/services/llm_guides/director/qwen_image_edit_reference.md",
+      "bytes": 8206,
+      "lines": 129,
+      "sha256": "e51342ed9a7e57a275f6e887645183fb7756c8aae45410326559b0aab766a21e",
+      "records": null
+    },
+    {
+      "path": "maestro-main/app/services/llm_guides/enhance/flux_image.md",
+      "bytes": 7771,
+      "lines": 163,
+      "sha256": "4b6d0a0ae5d06202a0c9937f91adafb791587227c699f7e99d6e3bae10a3590a",
+      "records": null
+    },
+    {
+      "path": "maestro-main/app/services/llm_guides/enhance/flux_image_edit.md",
+      "bytes": 7722,
+      "lines": 169,
+      "sha256": "ce542898abdb9bf213e2f09d7f35aa1e6f4fe73a38d3975ddf43e57e0b7aa1b0",
+      "records": null
+    },
+    {
+      "path": "maestro-main/app/services/llm_guides/enhance/generic_image.md",
+      "bytes": 1222,
+      "lines": 27,
+      "sha256": "26287b62011cbb82a6c46fe6785ed9f6ee4dff25269c81f46f8ba93e2430a905",
+      "records": null
+    },
+    {
+      "path": "maestro-main/app/services/llm_guides/enhance/qwen_image_edit.md",
+      "bytes": 2087,
+      "lines": 36,
+      "sha256": "6d7eb2b209ffe84ce07b0c86993f2de8314db22508842c420ce38e2c89c800b6",
+      "records": null
+    },
+    {
+      "path": "maestro-main/app/services/llm_guides/enhance/qwen_image_gen.md",
+      "bytes": 3891,
+      "lines": 74,
+      "sha256": "42ddfe3660232987728a288bc7d5c4f4e1e3736bc56e34e6f49d409610d5820e",
+      "records": null
+    },
+    {
+      "path": "openmontage-main/skills/creative/image-gen-usage.md",
+      "bytes": 7860,
+      "lines": 170,
+      "sha256": "1d9fb321037aeed34ad65616f5cd2d4439b692bc2c7f1e7addfd689c76068be4",
+      "records": null
+    },
+    {
+      "path": "openmontage-main/skills/creative/image-provider-usage.md",
+      "bytes": 6279,
+      "lines": 126,
+      "sha256": "2e92fc2e76606e891dd9a64f7668cf922450f20a282095a15f70bd626a39302b",
+      "records": null
+    },
+    {
+      "path": "prom-gallery/prom-gallery-image-prompts-settings-and-original-prompts.md",
+      "bytes": 921629,
+      "lines": 11358,
+      "sha256": "71f13c7ac5d7285f61075b548e7b5c30d3e51444fadb18ca85685df6ccd77f94",
+      "records": null
+    },
+    {
+      "path": "prompt-library-2026/C10_만화.md",
+      "bytes": 142762,
+      "lines": 2309,
+      "sha256": "4cdc814a8cb83736b7c22c6fd61495dc955d8c5cee0384e814d872beb00743af",
+      "records": null
+    },
+    {
+      "path": "prompt-library-2026/C1_패션.md",
+      "bytes": 149521,
+      "lines": 2099,
+      "sha256": "e9ddf0b3eeef61194da14490fd1da290769fd814aa6a38788b6008d417dabcba",
+      "records": null
+    },
+    {
+      "path": "prompt-library-2026/C2_뷰티.md",
+      "bytes": 124470,
+      "lines": 2099,
+      "sha256": "c69f1262f4e66cf23f91654ba696b235221e39f40d89fb05ae4eefa9f4b6ef1e",
+      "records": null
+    },
+    {
+      "path": "prompt-library-2026/C3_한국어_포스터.md",
+      "bytes": 197199,
+      "lines": 2999,
+      "sha256": "3021ff2b36d8a2a4407da9ade3c8762cc916b33920bbb4733b4c3dad9fa0fa6f",
+      "records": null
+    },
+    {
+      "path": "prompt-library-2026/C4_제품_도감.md",
+      "bytes": 127438,
+      "lines": 1719,
+      "sha256": "c207d05d3682909c03e8f2cfd016fe504a64e3511f959235209b174e98a59ad3",
+      "records": null
+    },
+    {
+      "path": "prompt-library-2026/C5_캠페인_포스터.md",
+      "bytes": 90499,
+      "lines": 1309,
+      "sha256": "c644374cf9a00dad7544c44ab7bca8a51e28672f53889f2a0c6a5314ef1ebfee",
+      "records": null
+    },
+    {
+      "path": "prompt-library-2026/C6_인포그래픽.md",
+      "bytes": 138359,
+      "lines": 2309,
+      "sha256": "a79c02828e8eef8f6b02af6852b9752b8c190f296dc013572f7110ea4780076e",
+      "records": null
+    },
+    {
+      "path": "prompt-library-2026/C7_카드뉴스.md",
+      "bytes": 125783,
+      "lines": 2309,
+      "sha256": "b5adead16dd9caa2e9c2090a97fe5a6a8aeb015afe828fc77db70f15feffd849",
+      "records": null
+    },
+    {
+      "path": "prompt-library-2026/C8_브랜딩_목업.md",
+      "bytes": 94333,
+      "lines": 1957,
+      "sha256": "06fb8bac50ff1c0e3884673c4cdb05f5a99317dbd108195eefeda389857a36dd",
+      "records": null
+    },
+    {
+      "path": "prompt-library-2026/C9_3D_아이콘.md",
+      "bytes": 96603,
+      "lines": 1909,
+      "sha256": "3a6c08ecfe200b4659cd67b3083ab2f609b825ddd26b74cd8702b62e8e4622fa",
+      "records": null
+    },
+    {
+      "path": "prompts3_카테고리별_프롬프트_원문/01_광고_포스터.md",
+      "bytes": 48619623,
+      "lines": 432207,
+      "sha256": "0c448d81df1821d4b4a00bb3cbea2051b4e7772ff8fbfef1b62ed7b182250e4a",
+      "records": null
+    },
+    {
+      "path": "prompts3_카테고리별_프롬프트_원문/02_사진_변환_필터.md",
+      "bytes": 34254686,
+      "lines": 352891,
+      "sha256": "d8b2db5ca5547eb8cd8384ebf4f240a11410971d70661b28898eb586a74c5f93",
+      "records": null
+    },
+    {
+      "path": "prompts3_카테고리별_프롬프트_원문/03_만화_일러스트.md",
+      "bytes": 27617714,
+      "lines": 287138,
+      "sha256": "abb413dc3670f47929eb1ce8e4d875f318dc28cdf1b0890671f168ee8805ed55",
+      "records": null
+    },
+    {
+      "path": "prompts3_카테고리별_프롬프트_원문/04_프로필_아바타.md",
+      "bytes": 9439599,
+      "lines": 106086,
+      "sha256": "e193bff55d025aa6bb04700f7c0fc6717678f0a6236d86acf4aa0d13269f4f18",
+      "records": null
+    },
+    {
+      "path": "prompts3_카테고리별_프롬프트_원문/05_취미_라이프.md",
+      "bytes": 13958676,
+      "lines": 133367,
+      "sha256": "5ebb3c850d878f3f2c6e18028f975d804d610115140e29f09cc779c8b406d4a3",
+      "records": null
+    },
+    {
+      "path": "prompts3_카테고리별_프롬프트_원문/06_유튜브_썸네일.md",
+      "bytes": 3773484,
+      "lines": 32901,
+      "sha256": "c21dc84274f0f29901f23622e7817f74fd1507e5584ce1474c85729da09be204",
+      "records": null
+    },
+    {
+      "path": "prompts3_카테고리별_프롬프트_원문/07_상상_초현실.md",
+      "bytes": 14632743,
+      "lines": 159516,
+      "sha256": "4e585ac70c1c5f0e2fb40a9936308ceb999c18475858f0fe605df6193470cc5e",
+      "records": null
+    },
+    {
+      "path": "prompts3_카테고리별_프롬프트_원문/08_SNS_카드뉴스.md",
+      "bytes": 5321525,
+      "lines": 45627,
+      "sha256": "cbd395980fdab8b5736aa9e3ba67e9662a5cf1a065281fb2c5f505f983ca7e3e",
+      "records": null
+    },
+    {
+      "path": "prompts3_카테고리별_프롬프트_원문/09_시즌_이벤트.md",
+      "bytes": 4582771,
+      "lines": 45872,
+      "sha256": "b296159c5d1bbfa74abed154ab95e4d0682c7e6205f1151fe239ae14be7abcea",
+      "records": null
+    },
+    {
+      "path": "prompts3_카테고리별_프롬프트_원문/10_굿즈_목업.md",
+      "bytes": 11266931,
+      "lines": 107601,
+      "sha256": "996613f4f3f8d8fa29a67eed4ed23990b37f22ab5ff12b30ae311e6dc8d37f93",
+      "records": null
+    },
+    {
+      "path": "prompts3_카테고리별_프롬프트_원문/11_인포그래픽_안내.md",
+      "bytes": 13621525,
+      "lines": 121109,
+      "sha256": "05627a834e29386faf03f5d3a100c8b2772a99c8eae5a0ae74ff54e9d92bad67",
+      "records": null
+    },
+    {
+      "path": "prompts3_카테고리별_프롬프트_원문/12_배경화면.md",
+      "bytes": 6117513,
+      "lines": 58978,
+      "sha256": "a5737adb9a9c11d1ce7fca9d9b17989eca0944738799c6da293de6d8a702aee5",
+      "records": null
+    },
+    {
+      "path": "reelforge-main/demos/d1-usage/image-brief.md",
+      "bytes": 1367,
+      "lines": 22,
+      "sha256": "69994542ebac9eea9c3714fa8cabffaa23c07f5d648b9151c42c2f6ef42c3531",
+      "records": null
+    },
+    {
+      "path": "reelforge-main/demos/d1-usage/image-manifest.json",
+      "bytes": 4030,
+      "lines": 61,
+      "sha256": "4da26172a0313fef8861160b4fcacb9b6ceed559f0e7072fbc4731ade48ed965",
+      "records": 1
+    },
+    {
+      "path": "reelforge-main/demos/d2-engine/image-brief.md",
+      "bytes": 1253,
+      "lines": 22,
+      "sha256": "6f7f02f396f3b5279876105acf0b47bfcc6bad05dabddac112009e311d831ccc",
+      "records": null
+    },
+    {
+      "path": "reelforge-main/demos/d2-engine/image-manifest.json",
+      "bytes": 3930,
+      "lines": 61,
+      "sha256": "8bcf2e6a954db701e5c909b40a5f6c3bab106665d150b49cb9a3c9c5c23473de",
+      "records": 1
+    },
+    {
+      "path": "reelforge-main/demos/d3-intro/image-brief.md",
+      "bytes": 1314,
+      "lines": 22,
+      "sha256": "63ebd176bd92b4709c365d6a4d3650d41149d959ed210699f11c4f0a09de27d1",
+      "records": null
+    },
+    {
+      "path": "reelforge-main/demos/d3-intro/image-manifest.json",
+      "bytes": 4480,
+      "lines": 68,
+      "sha256": "17e019a7849120071caa58d117de21e18786f8c5271766621f6567917cb46253",
+      "records": 1
+    },
+    {
+      "path": "reelforge-main/research/07-features/_merged/merge-assets-images.md",
+      "bytes": 13189,
+      "lines": 40,
+      "sha256": "b2608cd56f3699c5281e31cb27ef8036f972f50a2e3ac1c6f46cb9a00a42f112",
+      "records": null
+    },
+    {
+      "path": "reelforge-main/schemas/image-manifest.schema.json",
+      "bytes": 4255,
+      "lines": 184,
+      "sha256": "da7fcd1b74f24a2dbc69eecea968c1bc6a443d0f9e15acd145d0dea5b8b2ae2c",
+      "records": 1
+    },
+    {
+      "path": "reelforge-main/showcase/news-brief/image-brief.md",
+      "bytes": 777,
+      "lines": 13,
+      "sha256": "a58a359137ea6c3596c366a2044709fe560eeada18ee26b1676d0efdcec9d959",
+      "records": null
+    }
+  ]
+}

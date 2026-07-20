@@ -146,6 +146,29 @@ Validate a size:
 python scripts/compose_prompt.py check-size --size 1536x1024
 ```
 
+Reuse a structured JSON or JSONL corpus record with its source and ID retained:
+
+```bash
+python scripts/compose_prompt.py compose-record --input /path/to/prompts.jsonl --id RECORD-ID
+python scripts/compose_prompt.py validate-record --input /path/to/prompts.jsonl --id RECORD-ID
+```
+
+## Corpus-Backed Routing
+
+The skill includes a source-preserving inventory of the complete local prompt
+corpus used for this upgrade: 158 files across Korean category libraries,
+large JSON prompt datasets, typography/diagram routers, provider and editing
+guides, and image-brief/manifest workflows. Raw collections are not copied
+into the Git repository. Instead, [the corpus router](references/corpus-router.md)
+maps every source family to the relevant request type, while
+[the coverage manifest](references/corpus-coverage.json) makes every input
+file auditable by path, size, line/record count, and SHA-256.
+
+Use one primary source family per request, then rebuild the result in the
+eleven-slot prompt contract. This avoids mixing unrelated examples or
+accidentally carrying model-specific settings from another provider into a GPT
+Image 2 prompt.
+
 ## Repository Structure
 
 ```text
@@ -155,10 +178,16 @@ python scripts/compose_prompt.py check-size --size 1536x1024
 │   └── openai.yaml
 ├── references/
 │   ├── api-and-codex-routes.md
+│   ├── corpus-coverage.json
+│   ├── corpus-router.md
 │   ├── prompt-frameworks.md
 │   └── source-notes.md
 ├── scripts/
 │   └── compose_prompt.py
+├── tools/
+│   ├── build_corpus_coverage.py
+│   ├── validate_corpus_coverage.py
+│   └── validate_skill.py
 ├── README.md
 ├── README.ko.md
 └── LICENSE
