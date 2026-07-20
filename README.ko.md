@@ -164,6 +164,26 @@ python scripts/compose_prompt.py compose --brief "rainy Seoul cinematic poster w
 python scripts/compose_prompt.py check-size --size 1536x1024
 ```
 
+JSON 또는 JSONL 코퍼스 레코드를 원본 경로와 ID를 유지한 채 재사용할 수 있습니다.
+
+```bash
+python scripts/compose_prompt.py compose-record --input /path/to/prompts.jsonl --id RECORD-ID
+python scripts/compose_prompt.py validate-record --input /path/to/prompts.jsonl --id RECORD-ID
+```
+
+## 코퍼스 기반 라우팅
+
+이번 고도화에는 한국어 카테고리 라이브러리, 대규모 JSON 프롬프트 데이터셋,
+타이포그래피·다이어그램 라우터, 프로바이더/편집 가이드, 이미지 브리프·매니페스트를
+포함한 전체 로컬 코퍼스 158개 파일을 활용했습니다. 약 200MB 원문을 Git 저장소에
+복사하지 않고, [코퍼스 라우터](references/corpus-router.md)가 요청 유형별 소스 패밀리를
+연결하며 [커버리지 매니페스트](references/corpus-coverage.json)는 각 원본 파일의 경로,
+크기, 줄/레코드 수, SHA-256을 기록합니다.
+
+요청마다 주 소스 패밀리를 하나 고른 뒤 11개 슬롯 계약으로 결과를 다시 구성하세요.
+서로 다른 예시를 무작정 합치거나 다른 모델의 파라미터를 GPT Image 2 프롬프트에
+섞는 것을 막습니다.
+
 ## 저장소 구조
 
 ```text
@@ -173,10 +193,16 @@ python scripts/compose_prompt.py check-size --size 1536x1024
 │   └── openai.yaml
 ├── references/
 │   ├── api-and-codex-routes.md
+│   ├── corpus-coverage.json
+│   ├── corpus-router.md
 │   ├── prompt-frameworks.md
 │   └── source-notes.md
 ├── scripts/
 │   └── compose_prompt.py
+├── tools/
+│   ├── build_corpus_coverage.py
+│   ├── validate_corpus_coverage.py
+│   └── validate_skill.py
 ├── README.md
 ├── README.ko.md
 └── LICENSE

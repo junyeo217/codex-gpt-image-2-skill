@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Compose structured GPT Image 2 prompts and validate image sizes."""
+"""Compose structured GPT Image 2 prompts, source records, and validate image sizes."""
 
 from __future__ import annotations
 
@@ -38,6 +38,31 @@ def load_data(args: argparse.Namespace) -> dict[str, str]:
     return data
 
 
+def load_record(input_path: str, record_id: str) -> tuple[dict[str, object], str]:
+    """Load one ID-addressable record from a JSON array/object or JSONL file."""
+    path = Path(input_path)
+    raw = path.read_text(encoding="utf-8")
+    if path.suffix.lower() == ".jsonl":
+        records = [json.loads(line) for line in raw.splitlines() if line.strip()]
+    else:
+        parsed = json.loads(raw)
+        records = parsed if isinstance(parsed, list) else [parsed]
+
+    for record in records:
+        if isinstance(record, dict) and str(record.get("id", "")) == record_id:
+            return record, str(path)
+    raise SystemExit(f"No record with id {record_id!r} in {path}")
+
+
+def record_prompt(record: dict[str, object]) -> str:
+    """Select the prompt-bearing field shared by the supported corpus record shapes."""
+    for key in ("full_prompt", "content"):
+        value = record.get(key)
+        if isinstance(value, str) and value.strip():
+            return value.strip()
+    raise SystemExit("Record must contain a non-empty 'full_prompt' or 'content' field")
+
+
 def compose(args: argparse.Namespace) -> int:
     data = load_data(args)
     default_constraints = "no watermark, no unwanted logo, no extra text unless requested"
@@ -59,6 +84,39 @@ def compose(args: argparse.Namespace) -> int:
 
     print("\n".join(lines))
     return 0
+
+
+def compose_record(args: argparse.Namespace) -> int:
+    """Print a reusable corpus prompt with stable provenance metadata."""
+    record, source = load_record(args.input, args.id)
+    print(f"[Corpus source] {source}")
+    print(f"[Corpus record] {args.id}")
+    print(record_prompt(record))
+    return 0
+
+
+def validate_record(args: argparse.Namespace) -> int:
+    """Validate prompt and optional output fields of a selected corpus record."""
+    record, source = load_record(args.input, args.id)
+    prompt_ok = bool(record_prompt(record))
+    metadata_fields = (
+        ("size", "quality", "output_format")
+        if "full_prompt" in record
+        else ("needReferenceImages",)
+    )
+    missing = [field for field in metadata_fields if field not in record]
+    result = {
+        "ok": prompt_ok and not missing,
+        "source": source,
+        "record_id": args.id,
+        "checks": {
+            "prompt_present": prompt_ok,
+            "required_metadata_present": not missing,
+        },
+        "missing_required_metadata": missing,
+    }
+    print(json.dumps(result, ensure_ascii=False, indent=2))
+    return 0 if result["ok"] else 1
 
 
 def parse_size(size: str) -> tuple[int, int]:
@@ -119,6 +177,16 @@ def main(argv: list[str]) -> int:
     p_compose.add_argument("--output", default="high-resolution image", help="default output slot")
     p_compose.add_argument("--no-default-constraints", action="store_true")
     p_compose.set_defaults(func=compose)
+
+    p_record = sub.add_parser("compose-record", help="emit one prompt from a JSON or JSONL corpus record")
+    p_record.add_argument("--input", "--jsonl", dest="input", required=True, help="JSON array/object or JSONL record file")
+    p_record.add_argument("--id", required=True, help="record id")
+    p_record.set_defaults(func=compose_record)
+
+    p_validate = sub.add_parser("validate-record", help="validate one prompt-bearing corpus record")
+    p_validate.add_argument("--input", "--jsonl", dest="input", required=True, help="JSON array/object or JSONL record file")
+    p_validate.add_argument("--id", required=True, help="record id")
+    p_validate.set_defaults(func=validate_record)
 
     p_size = sub.add_parser("check-size", help="validate a GPT Image 2 size")
     p_size.add_argument("--size", required=True)
