@@ -107,7 +107,7 @@ color palette (HEX): #0d1318, #162025, #cbe7f4, #2c3331, #b0d9ea
 
 문장형으로 풀어 쓰지 않고 "sensor look / lens character / HEX" 같은 키:값 슬롯으로 명시하면, 모델이 각 값을 독립적으로 해석해 서로 다른 슬롯의 정보가 섞이지 않는다. 세부 카메라·렌즈 어휘는 `photo-prompt-master/01_camera_lens_exposure.md`를 참조.
 
-**네거티브 슬롯 (선택)**: 8슬롯 뒤에 원치 않는 결과를 명시적으로 배제하는 문장을 덧붙이면 AI스러운 인공물을 줄일 수 있다. 예: `no plastic skin, no over-sharpening, no HDR look, no watermark, no text`. 톤·질감 계열 어휘는 `photo-prompt-master/05_mood_postprocessing.md`(후보정·프린팅)를 참조.
+**AI 인공물 방지 (선택)**: 8슬롯 뒤에 원치 않는 결과를 `no ~` 부정문으로 나열하지 않는다(core-grammar.md §철칙 1, §Tier-0) — 대신 원하는 마감 상태를 긍정 절로 직접 덧붙이면 AI스러운 인공물을 줄일 수 있다. 예: `natural skin texture, visible pores, fine peach fuzz`(플라스틱 피부 대신), `soft natural micro-contrast with gentle film-like tonal rolloff`(과도한 샤프닝 대신), `balanced low-contrast dynamic range, gentle highlight rolloff`(HDR룩 대신), `clean, brand-free, unbranded finish`(워터마크·로고 대신). 글자가 없는 컷이면 텍스트 관련 절 자체를 프롬프트에 넣지 않는다 — 렌더 텍스트가 있는 컷이면 이 절과 별개로 Tier-1 동결 문장(core-grammar.md §Tier-1)을 쓴다. 톤·질감 계열 어휘는 `photo-prompt-master/05_mood_postprocessing.md`(후보정·프린팅)를 참조.
 
 **6요소 ↔ 8슬롯 대응**: 슬롯 1-4(인물/포즈/의상/헤어메이크업)는 미장센 1요소(배치)와 5요소(의상·소품)를 인물 쪽에서 세분화한 것이고, 슬롯 5-6(조명/색감)은 미장센 2·3요소를 그대로 옮긴 것이며, 슬롯 7(필름·카메라)은 미장센 6요소(구도)를 장비 스펙으로 구체화한 것이고, 슬롯 8(배경)은 미장센 4요소(공간·세트)에 대응한다. 즉 6요소로 "왜"를 정한 다음 8슬롯으로 "어떻게 쓸지"를 채우면 두 프레임워크가 어긋나지 않는다.
 
@@ -135,7 +135,8 @@ color palette (HEX): #0d1318, #162025, #cbe7f4, #2c3331, #b0d9ea
 16mm film still, Korean independent cinema aesthetic.
 A young East Asian woman in her late 20s sits alone on the wooden
 porch of an old countryside house, late afternoon. She stares at
-her own hands with quiet confusion, seated still, no motion.
+her own hands with quiet confusion, seated still, her body held in
+complete stillness.
 Faded floral cotton dress, bare feet, a subtle mechanical seam
 along her wrist joint. Warm golden hour sunlight through persimmon
 trees, dust particles suspended in the light beam. 85mm telephoto

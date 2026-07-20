@@ -106,7 +106,7 @@ badge "NEW" as a compact pill-shaped badge in the top-right corner.
 
 ## TP 패턴 카탈로그
 
-**타이포그래피가 유일한 주인공인 포스터 아트** 14종. 렌더 단어 1개(또는 2~3어 구)가 화면 최대 시각 요소이고, 일시·장소·크레딧은 소형 위성 텍스트로 위계 분리한다. 팔레트는 2~4색 하드 락 + HEX. **반복·미세 텍스트가 컨셉인 패턴(TP2·TP14류)은 Tier-1 결합 문장과 상충** — `no duplicate text`가 반복 디자인 자체를 죽이므로 이 경우 화이트리스트 서브셋(`no invented glyphs`, `no watermark`)만 쓴다.
+**타이포그래피가 유일한 주인공인 포스터 아트** 14종. 렌더 단어 1개(또는 2~3어 구)가 화면 최대 시각 요소이고, 일시·장소·크레딧은 소형 위성 텍스트로 위계 분리한다. 팔레트는 2~4색 하드 락 + HEX. **반복·미세 텍스트가 컨셉인 패턴(TP2·TP14류)은 Tier-1 결합 문장과 상충** — `no duplicate text`가 반복 디자인 자체를 죽이므로 이 경우 화이트리스트 서브셋만 남긴 동결 문장 변형(예: `All text appears once, perfectly legible — no invented glyphs, no watermark.`)을 쓴다. 정본 접두사 `All text appears once, perfectly legible — `는 그대로 유지하고 화이트리스트 항목만 줄이는 것이며, 접두사를 바꾸거나 문장 밖에 독립 네거티브를 두는 것은 허용되지 않는다.
 
 | TP | 이름 | 한줄 시그니처 | 적합 용도 |
 |---|---|---|---|
@@ -149,7 +149,7 @@ badge "NEW" as a compact pill-shaped badge in the top-right corner.
   and thin in the light — the boundaries of the face formed only by shifts in the
   flow direction of the lettering, with one large headline as the single legible word.
   ```
-- 실패 경고: 미세 반복 글자는 어떤 엔진에서도 유사문자 뭉개짐이 된다 — **판독을 포기하고 명암 취득 텍스처로만 다루는 것이 공식 전략**이다. Tier-1 결합 문장을 그대로 쓰면 `no duplicate text`가 미세 반복 자체를 억제해 룩이 무너지므로, 부정형은 `the headline appears once, perfectly legible — no watermark.`만 허용한다. 근접 크롭은 뭉개짐이 들통나므로 금지, 초상이 흐리게 나오면 밀도 대비 문구부터 강화해 재시도한다.
+- 실패 경고: 미세 반복 글자는 어떤 엔진에서도 유사문자 뭉개짐이 된다 — **판독을 포기하고 명암 취득 텍스처로만 다루는 것이 공식 전략**이다. Tier-1 동결 문장을 그대로 쓰면 `no duplicate text`가 미세 반복 자체를 억제해 룩이 무너지므로, 화이트리스트 서브셋만 남긴 동결 문장 변형 `All text appears once, perfectly legible — no watermark.`를 대신 쓴다 — 정본 접두사(`All text appears once, perfectly legible — `, em dash 포함)는 그대로 두고 화이트리스트 항목만 줄이는 것이며, 접두사를 바꾸거나 문장 밖에 독립 네거티브를 따로 두면 안 된다. 근접 크롭은 뭉개짐이 들통나므로 금지, 초상이 흐리게 나오면 밀도 대비 문구부터 강화해 재시도한다.
 
 **TP4 광학 현상 타입**
 - 체크리스트: 헤드라인이 잉크가 아니라 물리 현상(그림자·반사·역광)으로만 존재할 것 · 실물 광원(램프·창)은 또렷하고 물리적으로 렌더될 것 · 반사 변형은 뒤집힘 방향을 명시(`mirrored upside-down`)할 것 · 카피는 짧게(2~5어) — 블러가 오탈자를 은폐해주는 대신 글자 수를 줄여야 한다.

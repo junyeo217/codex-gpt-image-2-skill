@@ -108,8 +108,9 @@ crop, and background exactly. Do not alter unrelated areas.
 
 ```text
 Remove [object] from [precise location]. Fill the area using the
-surrounding background texture and lighting so no gap or seam remains.
-Preserve every other object, the camera angle, crop, and background exactly.
+surrounding background texture and lighting, blending seamlessly so the
+fill reads as one continuous, uninterrupted surface. Preserve every other
+object, the camera angle, crop, and background exactly.
 ```
 
 주의: 추가할 오브젝트는 접촉면(바닥·테이블·손)까지 지정해야 그림자와 크기가 맞습니다. 제거는 "무엇으로 채울지"를 말하지 않으면 원치 않는 새 오브젝트가 그 자리에 생길 수 있습니다.

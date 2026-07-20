@@ -43,8 +43,9 @@ Standard character design sheet, three-view (front, side, back) of
 [character description], pure white background. Close-up bust shot on
 the left, full-body three-view on the right: front, side, and back.
 Photorealistic style. Strictly maintain character consistency across all
-views. Clothing and proportions remain identical in every view. No props,
-no background elements, no weapons unless specified.
+views. Clothing and proportions remain identical in every view. The
+character is the only element in frame against the plain background;
+include props or weapons only if explicitly specified elsewhere.
 ```
 
 ### 2) 중립 시트 승인

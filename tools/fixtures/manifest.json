@@ -52,5 +52,23 @@
     "mode": "txt",
     "flags": [],
     "expect": { "ok": false, "codes": ["E-NEG-FREE"] }
+  },
+  {
+    "path": "bad/bad_jsonl_blank.jsonl",
+    "mode": "jsonl",
+    "flags": [],
+    "expect": { "ok": false, "codes": ["E-EMPTY"] }
+  },
+  {
+    "path": "bad/bad_jsonl_numeric_size.jsonl",
+    "mode": "jsonl",
+    "flags": [],
+    "expect": { "ok": false, "codes": ["E-SIZE-LOCK"] }
+  },
+  {
+    "path": "bad/bad_jsonl_null.jsonl",
+    "mode": "jsonl",
+    "flags": [],
+    "expect": { "ok": false, "codes": ["E-JSONL-FIELD"] }
   }
 ]

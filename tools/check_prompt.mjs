@@ -19,7 +19,8 @@
 // 빈 본문(주석/공백만 남는 경우)은 E-EMPTY 에러로 처리한다.
 
 import { readFileSync, realpathSync } from "node:fs";
-import { pathToFileURL } from "node:url";
+import { fileURLToPath } from "node:url";
+import path from "node:path";
 
 const SIZE_WHITELIST = ["1024x1024", "1024x1536", "1536x1024", "1792x1024", "1024x1792", "2048x2048"];
 
@@ -440,15 +441,25 @@ export function checkJsonlContent(raw, opts = {}) {
   const errors = [], warnings = [];
   const ids = new Set();
   const lines = raw.split(/\r?\n/);
+  let recordCount = 0;
 
   lines.forEach((line, i) => {
     if (!line.trim()) return;
+    recordCount++;
     const lineNo = i + 1;
     let rec;
     try {
       rec = JSON.parse(line);
     } catch (e) {
       pushFinding(errors, "E-JSONL-PARSE", lineNo, line.slice(0, 60), `JSON 파싱 실패: ${e.message}`);
+      return;
+    }
+
+    // JSON.parse는 "null"/"123"/"\"str\""/"[1,2]" 같은 비-객체 값도 유효하게 파싱한다.
+    // 아래 필드 체크들은 rec가 plain object라고 가정하므로, 그렇지 않으면 raw TypeError로
+    // 죽기 전에 여기서 명시적으로 E-JSONL-FIELD를 내고 이 레코드 처리를 중단한다.
+    if (rec === null || typeof rec !== "object" || Array.isArray(rec)) {
+      pushFinding(errors, "E-JSONL-FIELD", lineNo, line.slice(0, 60), "record must be a JSON object");
       return;
     }
 
@@ -492,8 +503,20 @@ export function checkJsonlContent(raw, opts = {}) {
             : `size ${rec.size}는 6종 화이트리스트 밖 — 가장 가까운 허용값: ${nearestSize(rec.size)}.`
         );
       }
+    } else {
+      // size 필드가 존재하지만 문자열이 아님(예: 숫자 123, boolean, object) — 화이트리스트
+      // 비교는 문자열 전용이라 타입 체크를 건너뛰면 값이 그대로 통과해버린다. 타입 자체가
+      // 이미 위반이므로 값 비교 없이 바로 E-SIZE-LOCK.
+      pushFinding(
+        errors, "E-SIZE-LOCK", lineNo, `size=${JSON.stringify(rec.size)}`,
+        `size 필드는 문자열이어야 함(현재 타입: ${typeof rec.size}) — 6종 화이트리스트(${SIZE_WHITELIST.join(", ")}) 중 하나를 문자열로 명시한다.`
+      );
     }
   });
+
+  if (recordCount === 0) {
+    pushFinding(errors, "E-EMPTY", 1, "(레코드 없음)", "jsonl contains no records — 공백 라인만 존재해 유효한 레코드가 하나도 없음.");
+  }
 
   return { errors, warnings };
 }
@@ -552,19 +575,23 @@ function runCli() {
 }
 
 // 경로에 공백/한글이 섞이면 import.meta.url은 percent-encode되지만 process.argv[1]은
-// raw string이라 `file://${process.argv[1]}` 같은 문자열 비교는 항상 불일치로 새고,
-// runCli()가 실행되지 않은 채 조용히 exit 0으로 빠진다. pathToFileURL()로 양쪽을
-// 동일하게 인코딩해 비교해야 이 경로들에서도 CLI가 실제로 실행된다.
-// 추가로 macOS의 /tmp → /private/tmp 같은 심볼릭 링크가 경로에 끼면, ESM 로더가
-// import.meta.url을 realpath로 정규화해버려 pathToFileURL(process.argv[1])만으로는
-// 여전히 불일치가 난다 — realpathSync로 심볼릭 링크까지 풀어서 비교한다(argv[1]이
-// 존재하지 않는 등 realpath가 실패하면 원본 경로로 폴백).
-function argvUrl(argvPath) {
+// raw string이라 URL 문자열끼리 직접 비교하면 항상 불일치로 샌다. 또 macOS의
+// /tmp → /private/tmp 같은 심볼릭 링크가 경로에 끼면 기본적으로 ESM 로더가
+// import.meta.url을 realpath로 정규화해버리는데, `node --preserve-symlinks-main`
+// (또는 NODE_OPTIONS=--preserve-symlinks-main)이 켜지면 반대로 import.meta.url이
+// 심볼릭 링크 경로 그대로 유지되면서 argv[1]만 realpath로 풀리는 비대칭이 생겨
+// 두 값이 다시 어긋난다. 그래서 URL 문자열이 아니라 "실제 파일시스템 경로"로
+// 양쪽을 fileURLToPath/path.resolve로 정규화한 뒤 realpathSync로 심볼릭 링크까지
+// 풀어서 비교한다(경로가 존재하지 않는 등 realpath가 실패하면 정규화된 경로로
+// 폴백 — 이 폴백 자체가 무조건 매치를 의미하지는 않는다).
+function safeRealpath(p) {
   try {
-    return pathToFileURL(realpathSync(argvPath)).href;
+    return realpathSync(p);
   } catch {
-    return pathToFileURL(argvPath).href;
+    return p;
   }
 }
-const isMain = !!process.argv[1] && import.meta.url === argvUrl(process.argv[1]);
+const self = safeRealpath(fileURLToPath(import.meta.url));
+const invoked = process.argv[1] ? safeRealpath(path.resolve(process.argv[1])) : null;
+const isMain = invoked !== null && self === invoked;
 if (isMain) runCli();
