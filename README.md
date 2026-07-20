@@ -1,209 +1,119 @@
-# GPT Image 2 Codex Skill
+# GPT Image 2 Prompt Skill
 
 [한국어 문서](README.ko.md) | English
 
-A Codex skill for GPT Image 2 prompt design, reverse prompting, image editing guidance, and production-ready visual brief construction.
+A general-purpose Codex/Claude Code skill for designing `gpt-image-2` prompts — drama stills, music-video key art, commercial and product ads, editorial fashion/beauty shoots, posters and typography, character sheets, multi-shot storyboards, image edits, and reverse prompting from a reference image.
 
-This repository is a **Codex skill**, not an image model, not an API wrapper, and not a standalone image-generation service. It gives Codex a compact workflow for turning vague visual ideas, reference images, or production requirements into structured GPT Image 2 prompts and practical creative direction.
+This repository is a **prompt-design skill**, not an image model, not an API wrapper, and not a standalone generation service. It gives an agent a compact, layered reference set so it loads only what a given request needs instead of one giant document.
 
 ## What This Skill Is For
 
-Use this skill when you want Codex to help with:
+- Production-ready `gpt-image-2` prompts across drama, music video, commercial/product, and editorial fashion domains
+- Character/identity consistency across multiple shots (sheets, hero-reference workflow, drift recovery)
+- Cinematic single stills (mise-en-scène, 8-slot tag taxonomy, film-stock grading)
+- Multi-shot sequences and storyboards, including Image-to-Video handoff considerations
+- Reference-image edit workflows (person swap, style transfer, virtual try-on, relight, object add/remove)
+- Exact text-in-image rendering, including Korean-specific typography failure modes
+- Reverse prompting a reference image into a reusable reproduction prompt
+- Model facts, pricing, and API/Codex implementation routes when explicitly needed
 
-- Production-ready GPT Image 2 prompts and visual briefs
-- Reverse prompting from a reference image into a reusable reproduction prompt
-- Image editing instructions that separate preserved details from requested changes
-- Cinematic posters, portraits, product shots, ads, thumbnails, UI mockups, infographics, detail-page visuals, logos, comics, diagrams, charts, slides, and character concepts
-- Specialized image workflows such as translation inside images, virtual try-on, drawing-to-image, product mockups, object removal, person insertion, lighting/weather changes, and multi-image compositing
-- Prompt QA, failure diagnosis, and targeted iteration
-- Visual brief cleanup before generating images in Codex, ChatGPT, or another GPT Image 2 workflow
+## Architecture
 
-## Core Idea
-
-The skill uses a structured prompt stack inspired by prompt-subtraction testing. Instead of relying on generic style words, it breaks image prompts into controllable visual slots:
+Progressive disclosure: one core-grammar file always applies, everything else is loaded on demand through the routing table in `SKILL.md`.
 
 ```text
-[Purpose]
-[Core brief]
-[Required elements]
-[Context / environment]
-[Style / rendering]
-[Composition / framing]
-[Light / material / color]
-[Layout / spatial relationships]
-[Text rules]
-[Constraints / bans / fixed details]
-[Output]
+SKILL.md                        entry point — routing table, tenet summary, master template, output contract
+references/
+├── core-grammar.md             always-on law: tenets, tiered negatives, dead-word removal,
+│                                numeric anchoring, size lock, self-check checklist
+├── character-consistency.md    identity lock, character sheets, hero-reference workflow
+├── cinematic-stills.md         mise-en-scène, 8-slot cinematic tag taxonomy, film stocks
+├── multi-shot.md               storyboard strategy, frame variation, I2V handoff
+├── edit-workflows.md           change-only-X, preserve lock-lists, edit recipes
+├── text-in-image.md            Tier-1 text guard, zone/band grammar, Hangul rules
+├── model-facts.md              capabilities, hard constraints, pricing, model choice
+├── api-and-codex-routes.md     Images API, Responses tool, Codex CLI call code
+├── lanes/                      thin domain presets (compose core files, add defaults)
+│   ├── drama.md
+│   ├── music-video.md
+│   ├── commercial.md
+│   └── editorial.md
+├── photo-prompt-master/        granular photography vocabulary (camera, light, color, genre...)
+├── validated-examples/         8 worked, checked prompt examples + README
+└── local/                      machine-local corpus router — not part of skill routing
+scripts/
+└── compose_prompt.py           slot-based prompt composer, size validator
+tools/
+├── check_prompt.mjs            automated core-grammar checklist validator (if present)
+├── build_corpus_coverage.py    local-only corpus manifest builder
+├── validate_corpus_coverage.py local-only corpus manifest verifier
+└── validate_skill.py           front-matter and reference-link validator
 ```
-
-This structure is especially useful for layout-sensitive work such as posters, thumbnails, e-commerce detail pages, product ads, infographics, educational visuals, UI mockups, and images with rendered text.
 
 ## Install
 
-Clone this repository into your Codex skills directory.
-
-macOS / Linux:
+Clone into your Codex skills directory:
 
 ```bash
 git clone https://github.com/junyeo217/codex-gpt-image-2-skill.git ~/.codex/skills/gpt-image-2
 ```
 
-Windows PowerShell:
+For Claude Code, symlink (or clone) the same repository into your project's `.claude/skills/` directory so it is discoverable alongside other skills:
 
-```powershell
-git clone https://github.com/junyeo217/codex-gpt-image-2-skill.git "$env:USERPROFILE\.codex\skills\gpt-image-2"
+```bash
+mkdir -p .claude/skills
+ln -s ~/.codex/skills/gpt-image-2 .claude/skills/gpt-image-2
 ```
 
-Restart Codex after installation so the skill metadata is reloaded.
+Restart the agent session after installation so the skill metadata reloads.
 
-## Usage Examples
+## Usage Flow
 
-Create a cinematic poster prompt:
+1. Match the request against the routing table in `SKILL.md` — one row, one primary reference.
+2. `core-grammar.md` always applies; it is not itself a routing target.
+3. Load 1-2 files total. Do not read all eight core references for one request.
+4. Compose the prompt using the matched reference's vocabulary on top of core-grammar's rules.
+5. Run the 9-point self-check in `core-grammar.md` before returning the prompt.
+6. Validate mechanically with `node tools/check_prompt.mjs <file>` if the tool is present.
 
-```text
-Use $gpt-image-2 to create a Korean noir movie poster prompt set in rainy Seoul.
+Routing table summary (full table lives in `SKILL.md`):
+
+| Signal | Reference |
+|---|---|
+| character consistency, character sheet | `character-consistency.md` |
+| cinematic/film still | `cinematic-stills.md` |
+| storyboard, multi-shot, I2V | `multi-shot.md` |
+| edit, change-only-X, preserve | `edit-workflows.md` |
+| poster copy, headline, typography | `text-in-image.md` |
+| drama / music video / commercial / editorial | `lanes/*.md` |
+| API, pricing, model choice | `model-facts.md` + `api-and-codex-routes.md` |
+| need a checked example | `validated-examples/` |
+
+## Validated Examples
+
+`references/validated-examples/` holds eight worked prompts that passed the core-grammar self-check, each with the request, the composed prompt, and the reasoning behind key choices. Read its own README before copying a pattern — examples are references, not templates to paste verbatim.
+
+## Prompt Validation
+
+If `tools/check_prompt.mjs` is present, run it against a drafted prompt file to check the mechanical parts of the self-check (negative-sentence count, HEX palette presence, size whitelist membership, Tier-1 guard placement):
+
+```bash
+node tools/check_prompt.mjs path/to/prompt.txt
 ```
-
-Reverse-prompt a reference image:
-
-```text
-Use $gpt-image-2 to analyze this reference image and turn it into a reusable GPT Image 2 prompt.
-```
-
-Design a product-detail-page visual:
-
-```text
-Use $gpt-image-2 to create a full cosmetic product detail page image prompt, not just a hero image.
-```
-
-Create a structured infographic prompt:
-
-```text
-Use $gpt-image-2 to create an infographic prompt explaining the 5 steps of a skincare routine for first-time customers.
-```
-
-Diagnose a weak prompt:
-
-```text
-Use $gpt-image-2 to improve this prompt and explain which visual slots are missing.
-```
-
-## Reverse Prompting Workflow
-
-For reference-image analysis, the skill does not try to recover the original hidden prompt. Instead, it creates a practical reproduction prompt by analyzing visible traits:
-
-- Subject and required objects
-- Environment and context
-- Camera angle, crop, and composition
-- Lighting, color palette, materials, and texture
-- Layout and spatial relationships
-- Text rules, if text appears in the image
-- Constraints that prevent common failures
-- Output format and aspect ratio
-
-A good request looks like this:
-
-```text
-Use $gpt-image-2 to reverse-prompt this image into:
-1. observed visual breakdown
-2. GPT Image 2 reproduction prompt
-3. three variation prompts
-4. failure-prevention constraints
-```
-
-## Image Editing Workflow
-
-For image edits, the skill separates:
-
-- Details that must be preserved, such as identity, pose, product shape, layout, camera angle, or room geometry
-- Details that should change, such as background, clothing, color palette, style, object placement, weather, lighting, or text
-- Constraints that prevent unwanted drift, such as face changes, broken hands, extra logos, text corruption, halos, smudges, or layout collapse
-
-This helps Codex produce edit instructions that are less ambiguous and easier to verify.
-
-## Advanced Implementation Notes
-
-This skill is primarily for prompt and visual-direction work. It also includes a small reference file for advanced users who want to connect the prompt workflow to implementation routes such as:
-
-- Direct Image API calls with `model="gpt-image-2"`
-- Responses API / Codex workflows using the `image_generation` tool
-
-These notes are supplementary, not the main purpose of the skill. See [references/api-and-codex-routes.md](references/api-and-codex-routes.md) if you need them.
 
 ## Helper Script
 
-The repository includes a small helper script for composing slot-based prompts and validating GPT Image 2 image sizes.
-
-Compose a quick structured prompt:
+The primary validation tool is `tools/check_prompt.mjs` (see Prompt Validation above) — always run a drafted prompt through it before use:
 
 ```bash
-python scripts/compose_prompt.py compose --brief "rainy Seoul cinematic poster with a red umbrella"
+node tools/check_prompt.mjs path/to/prompt.txt
 ```
 
-Validate a size:
+`scripts/compose_prompt.py compose` is a legacy drafting scaffold only; its labeled-slot output must be rewritten into core-grammar-compliant prose and validated with `check_prompt.mjs` before use.
 
-```bash
-python scripts/compose_prompt.py check-size --size 1536x1024
-```
+## Sources And Credit
 
-Reuse a structured JSON or JSONL corpus record with its source and ID retained:
-
-```bash
-python scripts/compose_prompt.py compose-record --input /path/to/prompts.jsonl --id RECORD-ID
-python scripts/compose_prompt.py validate-record --input /path/to/prompts.jsonl --id RECORD-ID
-```
-
-## Corpus-Backed Routing
-
-The skill includes a source-preserving inventory of the complete local prompt
-corpus used for this upgrade: 158 files across Korean category libraries,
-large JSON prompt datasets, typography/diagram routers, provider and editing
-guides, and image-brief/manifest workflows. Raw collections are not copied
-into the Git repository. Instead, [the corpus router](references/corpus-router.md)
-maps every source family to the relevant request type, while
-[the coverage manifest](references/corpus-coverage.json) makes every input
-file auditable by path, size, line/record count, and SHA-256.
-
-Use one primary source family per request, then rebuild the result in the
-eleven-slot prompt contract. This avoids mixing unrelated examples or
-accidentally carrying model-specific settings from another provider into a GPT
-Image 2 prompt.
-
-## Repository Structure
-
-```text
-.
-├── SKILL.md
-├── agents/
-│   └── openai.yaml
-├── references/
-│   ├── api-and-codex-routes.md
-│   ├── corpus-coverage.json
-│   ├── corpus-router.md
-│   ├── prompt-frameworks.md
-│   └── source-notes.md
-├── scripts/
-│   └── compose_prompt.py
-├── tools/
-│   ├── build_corpus_coverage.py
-│   ├── validate_corpus_coverage.py
-│   └── validate_skill.py
-├── README.md
-├── README.ko.md
-└── LICENSE
-```
-
-## Notes And Limitations
-
-- This skill does not prove which backend image model a Codex UI tool uses unless the runtime exposes that information.
-- For deterministic API work, explicitly set `model="gpt-image-2"`; API notes are provided only as supplementary reference.
-- Reverse prompting creates a useful reproduction prompt, not the exact original prompt.
-- The repository does not include the original PDF, Notion page text, Soylab page content, or copied prompt collections.
-- Always follow OpenAI usage policies and applicable rights when using real people, brands, logos, or copyrighted references.
-
-## Sources
-
-This skill distills patterns from official OpenAI documentation, user-provided prompt-subtraction experiments, the Soylab GPT Image 2 guide, and public GPT Image 2 community workflows. Source notes are summarized in [references/source-notes.md](references/source-notes.md).
+This skill's methodology — concept-variable axes for dead-word reduction, the R-axis body-reaction translation technique, tiered positive-only negatives, and the layout-first routing pattern — draws inspiration from the `gongnyang-prompt-kit` reference approach, plus general community GPT Image 2 workflows and official OpenAI documentation. No original prompt collections, PDFs, or third-party repository contents are copied into this repository; only distilled patterns and structure are retained. Specific local file paths are intentionally excluded — see `references/local/` for the machine-local corpus router, which is not required for the skill to function.
 
 ## License
 

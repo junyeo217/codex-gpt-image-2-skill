@@ -1,0 +1,32 @@
+[
+  {
+    "path": "good/good_cinematic.txt",
+    "mode": "txt",
+    "flags": [],
+    "expect": { "ok": true, "codes": [] }
+  },
+  {
+    "path": "good/good_poster_tier1.txt",
+    "mode": "txt",
+    "flags": [],
+    "expect": { "ok": true, "codes": [] }
+  },
+  {
+    "path": "bad/bad_free_negative.txt",
+    "mode": "txt",
+    "flags": [],
+    "expect": { "ok": false, "codes": ["E-NEG-FREE"] }
+  },
+  {
+    "path": "bad/bad_sdmj_syntax.txt",
+    "mode": "txt",
+    "flags": [],
+    "expect": { "ok": false, "codes": ["E-SDMJ-SYNTAX"] }
+  },
+  {
+    "path": "bad/bad_dead_words.txt",
+    "mode": "txt",
+    "flags": [],
+    "expect": { "ok": false, "codes": ["E-SIZE-LOCK", "W-DEAD-WORD"] }
+  }
+]

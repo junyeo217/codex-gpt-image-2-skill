@@ -4,7 +4,7 @@
 # dependencies = []
 # ///
 # ─── How to run ───
-# uv run tools/build_corpus_coverage.py --corpus /path/to/data --output references/corpus-coverage.json
+# uv run tools/build_corpus_coverage.py --corpus /path/to/data --output references/local/corpus-coverage.json
 """Build a deterministic, source-preserving inventory of a local prompt corpus."""
 
 from __future__ import annotations

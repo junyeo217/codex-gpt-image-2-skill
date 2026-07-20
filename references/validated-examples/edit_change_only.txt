@@ -1,0 +1,21 @@
+# 용도: 편집 프롬프트 — 인물 재킷 색상만 변경 ("Change only X" + 보존 락리스트 템플릿 실사용)
+# 레인: edit-workflows (범용, 인물 편집)
+# 사이즈: AR 3:2 (1536x1024), quality medium, 입력 이미지 해상도에 맞춰 편집
+# 검증: 자가점검 9항 통과 — Change only 1항목만 지정 / 보존 락리스트 항목별 나열 / 재언급 유발 명사 대신 영역·위치로 지칭
+
+Change only the color of the subject's jacket, from matte black to deep forest green: base fabric #1F3B2C, shadow fold tone #14261C, highlight fold tone #345C42, same matte finish as the original fabric. Preserve exactly:
+- identity: same face shape, same eyes, same hairstyle and hair color, same skin tone
+- pose and body geometry: same posture, same limb positions, same proportions
+- camera angle, crop, and framing
+- lighting direction, color temperature, and shadow placement
+- every background object outside the edit target
+- all visible logos, labels, and existing text
+- expression state and skin texture
+- accessories rendered exactly as shown, same count and same position
+- fabric texture and stitching pattern — only the hue changes
+
+The subject stands in a stone courtyard, one hand resting flat on a wooden railing, the other lightly holding a cup handle, weight resting on the back foot. Recompute only the jacket's contact shadow and fold highlights to match the new forest green hue under the existing key:fill 1:2 daylight; every other shadow in the frame stays exactly where it was. The courtyard's stone paving, the wooden railing grain, and the cup's ceramic surface keep their original color and material exactly. Keep everything else in the image unchanged.
+
+Reference note: Image 1 is the base and controls composition, camera angle, crop, lighting, and every element outside the jacket. Only the jacket region changes; every pixel outside that region is treated as protected.
+
+AR 3:2

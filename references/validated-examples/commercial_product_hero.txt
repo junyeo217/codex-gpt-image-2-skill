@@ -1,0 +1,20 @@
+# 용도: 제품 히어로샷 — 가상 스킨케어 세럼 병, 하단 1/3 카피 여백 확보
+# 레인: commercial
+# 사이즈: AR 1:1 (1024x1024), quality medium
+# 검증: 자가점검 9항 통과 — 팔레트 4색 하드락 / 죽은말 0(수치화 경로 적용) / Text-in-image 절 생략(텍스트 없는 컷이므로 관련 절 자체 미기재)
+
+Scene: 가상 브랜드 세럼 유리병 하나가 화면 상단 2/3 중앙에 45도로 살짝 기울어 놓여 있고, 하단 1/3은 카피가 들어갈 자리로 완전히 비어 있다 — exactly one bottle in frame, nothing else on the surface. 병뚜껑은 무광 브러시드 실버 #C7C9CC, 라벨은 브랜드 없는 클린 마감의 크림 화이트 #F4F1EA 단색.
+
+Camera: eye-level에서 15도 살짝 내려다보는 하이앵글, 카메라-피사체 거리 약 40cm, shallow depth of field, 배경이 병 뒤로 부드럽게 뭉개진다.
+
+Lighting: soft diffuse wraparound light from a large source directly above, camera-left에서 들어오는 cool rim light가 유리병 옆선을 따라 얇게 흐른다. key:fill 1:2, gentle gradient shadow pooling beneath the bottle as a single soft contact shadow.
+
+Color grading: 팔레트 #E4DED0 #C7C9CC #4A6B5C #F4F1EA, neutral 5200K, 배경은 세이지그린 #4A6B5C에서 아이보리 #E4DED0으로 이어지는 수직 그라데이션.
+
+Texture/Medium: 유리 표면에 맺힌 미세한 물방울 두세 개가 하이라이트를 반사하고, 세럼 내부 액체는 반투명한 앰버 톤으로 은은하게 비친다. 매끄럽고 맑게 반짝이는 유리 표면에 깨끗한 굴절만 보인다. 병 하단부는 살짝 두꺼운 유리로 빛을 굴절시켜 바닥에 옅은 앰버색 그림자 얼룩을 만든다.
+
+Composition: 제품이 프레임 세로축 중앙에 정렬되고, 하단 1/3은 카피 위계를 위한 완전한 네거티브 스페이스로 남는다. 병 라벨의 정면이 카메라를 향해 정확히 15도 돌아가 있어 라벨 형태는 보이되 글자 없는 클린 마감만 읽힌다.
+
+배경 요소: 무한대 배경(인피니티 커브) 형태의 단일 표면이 세이지그린에서 아이보리로 자연스럽게 이어지고, 그 표면 위에는 병 하나만 존재한다.
+
+AR 1:1

@@ -3,3 +3,6 @@ __pycache__/
 .DS_Store
 Thumbs.db
 .env
+
+# local-only corpus manifest (machine-specific)
+references/local/corpus-coverage.json

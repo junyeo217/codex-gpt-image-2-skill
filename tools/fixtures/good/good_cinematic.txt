@@ -1,0 +1,13 @@
+# category: cinematic_still
+# size: 1536x1024
+# tier: 0
+
+Scene: 비 내린 직후의 홍콩식 야시장 골목, 네온 간판 불빛이 젖은 아스팔트에 번져 반사된다. 형사 한 명이 골목 중앙에 단독으로 서 있고, 뒤쪽은 흐릿하게 빠진 빈 골목.
+Subject: 30대 초반 동아시아 남성, 짧은 다크브라운 헤어, 짙은 쌍꺼풀에 브라운 홍채, 오른쪽 눈썹 위 작은 흉터, 매트한 입술 마감, 차콜 트렌치코트 #2B2B2E, 배경 #14171F, 카메라 거리 약 2.5m.
+Camera: 아이레벨, 로우앵글 살짝, 피사체를 화면 3분의 1선에 배치, shallow depth of field, background falls off softly into creamy blur.
+Lighting: practical neon glow from camera right, soft diffuse wraparound fill, key:fill 1:3, dramatic high-contrast shadow pools.
+Color grading: teal & orange grading, 팔레트 #0F1D30 #C9642B #1C1A17 #E8B23D, warm 3200K-feel neon against cool shadow.
+Texture/Medium: wet reflective asphalt, natural skin texture, visible pores, fine peach fuzz, subtle film grain.
+Mood: calm symmetric structure on a steady horizon, low-saturation composed palette, slow-breathing stability.
+Output: quality high, one person in frame, solo subject, clean minimal background, nothing on the surface.
+AR 3:2

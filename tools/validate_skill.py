@@ -4,7 +4,7 @@
 # dependencies = []
 # ///
 # ─── How to run ───
-# uv run tools/validate_skill.py SKILL.md README.md README.ko.md references/corpus-coverage.json
+# uv run tools/validate_skill.py SKILL.md README.md README.ko.md references/local/corpus-coverage.json
 """Validate the published skill's metadata and local Markdown references."""
 
 from __future__ import annotations
@@ -38,6 +38,7 @@ def validate_front_matter(skill: Path, errors: list[str]) -> None:
 
 def validate_references(document: Path, errors: list[str]) -> None:
     """Confirm every relative reference link resolves inside the repository."""
+    # NOTE: only checks markdown-link syntax ](references/...); backtick-quoted paths are not covered.
     for link in REFERENCE_LINK.findall(document.read_text(encoding="utf-8")):
         if not (document.parent / link).is_file():
             errors.append(f"broken reference in {document}: {link}")
@@ -46,7 +47,7 @@ def validate_references(document: Path, errors: list[str]) -> None:
 def main() -> int:
     """Validate the paths passed by the release check command."""
     if len(sys.argv) != 5:
-        raise SystemExit("Usage: validate_skill.py SKILL.md README.md README.ko.md references/corpus-coverage.json")
+        raise SystemExit("Usage: validate_skill.py SKILL.md README.md README.ko.md references/local/corpus-coverage.json")
     skill, english, korean, coverage = (Path(value) for value in sys.argv[1:])
     errors: list[str] = []
     for path in (skill, english, korean, coverage):

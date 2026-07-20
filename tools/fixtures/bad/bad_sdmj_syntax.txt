@@ -1,0 +1,8 @@
+# category: poster
+# size: 1792x1024
+
+Scene: a futuristic cityscape at dusk, (masterpiece:1.2), 8k, best quality, ultra-detailed skyline.
+Camera: wide establishing shot.
+Lighting: neon glow, dramatic rim light.
+Color grading: 팔레트 #0B0A12 #7A5FD0 #D8DCE4.
+--ar 16:9 --v 5 --style raw

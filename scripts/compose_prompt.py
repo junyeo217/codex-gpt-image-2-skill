@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Compose structured GPT Image 2 prompts, source records, and validate image sizes."""
+"""Compose structured GPT Image 2 prompts, source records, and validate image sizes.
+
+NOTE: the 'compose' subcommand emits a legacy labeled scaffold for drafting only — final
+prompts must follow SKILL.md's routing flow and pass tools/check_prompt.mjs.
+"""
 
 from __future__ import annotations
 
@@ -65,7 +69,7 @@ def record_prompt(record: dict[str, object]) -> str:
 
 def compose(args: argparse.Namespace) -> int:
     data = load_data(args)
-    default_constraints = "no watermark, no unwanted logo, no extra text unless requested"
+    default_constraints = "clean unbranded finish, single rendering of any requested text"
     if args.no_default_constraints:
         default_constraints = ""
 

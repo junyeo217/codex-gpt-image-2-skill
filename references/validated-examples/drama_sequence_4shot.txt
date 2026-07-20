@@ -1,0 +1,22 @@
+# 용도: Thinking 모드 연속 4샷 드라마 시퀀스 — 도심 상점가에서 무언가를 발견하고 반응하는 흐름 (공유 아이덴티티 전문 포함)
+# 레인: drama
+# 사이즈: AR 16:9 (1792x1024), quality medium, 시퀀스 전체 통일
+# 검증: 자가점검 9항 통과 — 부정문 0(Tier-0 긍정 재서술) / 팔레트 5색 시퀀스 단위 고정 / 샷마다 포즈·앵글·거리 중 최소 1개 변주
+
+이 장면을 4장의 연속 시네마틱 스틸컷으로 생성해주세요. 각 이미지는 독립된 파일로, 아래 공유 아이덴티티와 공유 환경을 모든 샷에서 정확히 동일하게 유지해주세요.
+
+공유 아이덴티티 전문: 20대 후반 한국 여성 → 다크브라운 로우 번 헤어가 가지런히 정돈됨 → 옅은 쌍꺼풀에 짙은 브라운 홍채, 미간 거리 눈 하나 폭 → 왼쪽 입가 아래 작은 점 → 마른 로즈베이지 립 마감 → 카멜 울 코트 #B08D6A 안에 크림 니트 #F2EDE4 → 카메라-피사체 거리는 샷마다 변주. 얼굴 골격, 턱선, 눈 모양과 간격, 피부결을 네 샷 전체에서 정확히 동일하게 유지한다. 어느 샷에서도 같은 인물로 즉시 인식되어야 한다. natural skin texture, visible pores, realistic color kept true to the identity dossier in every frame.
+
+공유 환경: 늦가을 저녁 서울 골목 상점가, 젖은 아스팔트에 네온 간판이 반사되는 시간대. warm 3200K practical signage light mixed with cool 5600K residual daylight, key:fill 1:2. 공유 팔레트: #2E2A26 #B08D6A #F2EDE4 #7A6B5D #0D0D0D, 네 샷 전체에 동일하게 적용.
+
+Shot 1: 와이드 이스타블리싱 샷. 인물이 골목 초입에 완전히 멈춰 선 정지 상태로 서 있고, 상점가 전체와의 관계가 드러난다. 28mm 광각 화각, 카메라 거리 약 6m, deep focus.
+
+Shot 2: 미디엄 샷. 걸음이 멈춘 채 시선이 화면 오른쪽 진열창에 고정돼 있다. 50mm 표준 화각, 카메라 거리 약 2.5m, shallow depth of field, 배경이 부드럽게 흐려진다.
+
+Shot 3: 클로즈업. 눈썹이 살짝 올라가고 입술이 얇게 벌어진 정지된 표정. 85mm 망원 압축, 카메라 거리 약 1.2m, side light emphasizing the cheekbone.
+
+Shot 4: 익스트림 클로즈업 인서트. 진열창 유리에 비친 눈동자만 프레임을 채운 정지 상태. 근접 매크로 화각, 카메라 거리 약 0.4m, catchlight from the signage reflected in the iris.
+
+공통: fine 35mm film grain, warm-to-cool color drift consistent across all 4 frames, identical key light direction (camera-right signage source) maintained throughout, 공유 아이덴티티 전문을 네 샷 모두에 글자 단위로 동일하게 적용.
+
+AR 16:9

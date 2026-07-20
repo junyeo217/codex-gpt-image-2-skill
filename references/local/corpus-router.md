@@ -1,5 +1,7 @@
 # Corpus Router
 
+> ⚠️ **LOCAL-ONLY**: 이 파일이 가리키는 디렉토리들은 특정 로컬 머신에만 존재한다. 이 문서는 스킬 동작에 불필요하며, 원본 코퍼스를 다시 증류(re-distill)할 때만 참고한다. 실제 요청 라우팅은 `SKILL.md`가 담당하며, 이 파일과 `corpus-coverage.json`은 `references/` 최상위 라우팅 대상이 아니다.
+
 This repository is upgraded from the complete local prompt corpus recorded in
 [`corpus-coverage.json`](./corpus-coverage.json). The manifest is deliberately
 source-preserving: it records every file's relative path, size, line count,
@@ -49,8 +51,9 @@ prompt; preserve that provenance during review.
 
 1. Select one family for the deliverable and at most one secondary family for a
    missing capability such as typography, diagrams, or asset QA.
-2. Convert examples to the existing eleven-slot contract. Do not merge several
-   unrelated long prompts or cross-provider parameters.
+2. Convert examples to the current master templates (8-slot cinematic / 6-section)
+   defined in SKILL.md. Do not merge several unrelated long prompts or
+   cross-provider parameters.
 3. When text, panels, diagrams, or a dense layout matters, lock reading order,
    hierarchy, text-safe zones, exact copy, and the no-extra-text constraint.
 4. When a record supplies a palette, aspect, quality, output format, or QA
@@ -66,6 +69,6 @@ prompt; preserve that provenance during review.
 When the local corpus changes, regenerate and verify the coverage artifact:
 
 ```bash
-python tools/build_corpus_coverage.py --corpus /path/to/data --output references/corpus-coverage.json
-python tools/validate_corpus_coverage.py --corpus /path/to/data --coverage references/corpus-coverage.json
+python tools/build_corpus_coverage.py --corpus /path/to/data --output references/local/corpus-coverage.json
+python tools/validate_corpus_coverage.py --corpus /path/to/data --coverage references/local/corpus-coverage.json
 ```

@@ -1,0 +1,26 @@
+# 용도: 3면도 캐릭터 시트 — 가상 오리지널 캐릭터, 순백 배경, 불변항 전체 명세
+# 레인: character-consistency (범용, 드라마/게임/웹툰 앵커용)
+# 사이즈: 2048x2048 (다요소 컷, 스타일가이드 시트류 1콜 예외에 해당, AR 1:1), quality high
+# 검증: 자가점검 9항 통과 — 8종 불변항 전부 수치·구체 서술 / 미화 금지 조항을 긍정형으로 재서술 / no계열 부정문 0
+
+Standard character design sheet, three-view of an original fictional courier character, pure white background #FFFFFF with nothing else present in the frame. Close-up bust portrait on the left third of the canvas; full-body three-view (front, side, back) arranged left to right across the remaining two-thirds. Photorealistic rendering style. Clothing, proportions, and coloring stay identical across all four views.
+
+불변항 명세(모든 뷰에서 동일하게 유지):
+- 얼굴 골격·턱선: 갸름한 계란형 얼굴, 각진 정도가 약한 부드러운 턱 끝
+- 눈 모양과 간격: 아몬드형 눈매, 옅은 쌍꺼풀, 미간 거리는 눈 하나 폭 정도
+- 코 높이·형태: 콧대 낮고 완만한 곡선, 코끝이 살짝 둥글다
+- 입술 형태: 윗입술이 아랫입술보다 약간 얇음, 무표정 시 입꼬리는 수평
+- 헤어: 애시브라운 숏 커트, 오른쪽으로 가르마를 타 가지런히 정돈됨
+- 피부톤·피부결: 웜 베이지 톤, natural skin texture, visible pores, one faint freckle cluster across the nose bridge
+- 체형·비율: 175cm 상당의 마른 체형, 어깨너비 보통, 다리 길이가 상체보다 약간 긴 비율
+- 식별 특징: 왼쪽 손목 안쪽에 가는 세로선 흉터 하나, 오른쪽 귀 위쪽에 작은 은색 이어커프
+
+의상: 무광 차콜 유틸리티 재킷 #3A3A3A, 안에는 슬레이트 그레이 이너 #6E6E6E, 벨트에 작은 파우치 하나만 부착. 신발은 무광 블랙 부츠 #1A1A1A.
+
+정체성 고정: 위 불변항을 네 개 뷰 전체에서 정확히 동일하게 유지한다. 정면·측면·후면·클로즈업 어느 각도에서도 즉시 같은 인물로 인식되어야 한다. natural skin texture, visible pores, the freckle cluster, and realistic color preserved rather than smoothed or airbrushed.
+
+포즈: 네 뷰 모두 완전한 정지 자세, 팔은 몸통 옆에 자연스럽게 늘어뜨리고 손은 편안하게 펴져 있다. 정면 뷰는 카메라를 정면으로 응시, 측면 뷰는 90도 프로필, 후면 뷰는 뒤통수와 등판이 보이도록 완전히 돌아선 자세.
+
+조명: flat, even studio light from directly above and both sides, key:fill 1:1, a thin contact shadow at the feet only, otherwise uniform illumination across every surface.
+
+AR 1:1
